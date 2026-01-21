@@ -1,0 +1,117 @@
+import { Layout } from "@/components/layout/Layout";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import { ArrowLeft, ArrowRight, Building2, MapPin, Users, TrendingUp } from "lucide-react";
+import servicesRealEstate from "@/assets/services-real-estate.jpg";
+
+const expertise = [
+  {
+    icon: MapPin,
+    title: "Detailed Location Assessment",
+    description: "Comprehensive analysis of potential locations, evaluating demographics, accessibility, competition, and market potential.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Feasibility Testing",
+    description: "Rigorous testing methodologies to determine the viability and potential success of real estate developments.",
+  },
+  {
+    icon: Users,
+    title: "Consumer Preferences",
+    description: "Understanding what consumers want in residential and commercial properties through targeted research.",
+  },
+];
+
+const Expertise = () => {
+  return (
+    <Layout>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 bg-olive-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 text-olive-600 hover:text-primary transition-colors mb-6 font-body"
+            >
+              <ArrowLeft size={16} />
+              Back to Services
+            </Link>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Our{" "}
+              <span className="text-primary">Expertise</span>
+            </h1>
+            <p className="font-body text-lg text-muted-foreground leading-relaxed">
+              Specialized knowledge in real estate research, location assessment, feasibility testing, and understanding consumer preferences.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Image */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <img
+            src={servicesRealEstate}
+            alt="Real Estate Expertise"
+            className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl"
+          />
+        </div>
+      </section>
+
+      {/* Real Estate Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-14 h-14 bg-olive-100 rounded-xl flex items-center justify-center">
+                <Building2 className="w-7 h-7 text-olive-600" />
+              </div>
+              <h2 className="font-display text-3xl font-bold text-foreground">
+                Real Estate Research
+              </h2>
+            </div>
+            <p className="font-body text-muted-foreground leading-relaxed mb-12">
+              Our specialized real estate research services help developers, investors, and businesses make informed decisions about property investments and developments.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {expertise.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-background rounded-xl p-6 card-elevated text-center"
+                >
+                  <div className="w-14 h-14 mx-auto bg-olive-100 rounded-xl flex items-center justify-center mb-4">
+                    <item.icon className="w-7 h-7 text-olive-600" />
+                  </div>
+                  <h3 className="font-display text-lg font-semibold text-foreground mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-primary">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-primary-foreground mb-6">
+            Leverage our expertise for your project
+          </h2>
+          <Button variant="heroOutline" size="lg" asChild>
+            <Link to="/contact" className="flex items-center gap-2">
+              Get Started
+              <ArrowRight size={18} />
+            </Link>
+          </Button>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Expertise;
