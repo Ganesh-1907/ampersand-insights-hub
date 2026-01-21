@@ -32,13 +32,13 @@ const services = [
     image: globalResearch,
     link: "/services/expertise",
   },
-  {
-    icon: PieChart,
-    title: "Solutions",
-    description: "Comprehensive quantitative and qualitative research solutions tailored to your business needs.",
-    image: servicesQuantitative,
-    link: "/services/solutions",
-  },
+  // {
+  //   icon: PieChart,
+  //   title: "Solutions",
+  //   description: "Comprehensive quantitative and qualitative research solutions tailored to your business needs.",
+  //   image: servicesQuantitative,
+  //   link: "/services/solutions",
+  // },
   {
     icon: BarChart3,
     title: "Quantitative Solutions",

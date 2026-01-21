@@ -31,10 +31,8 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-sm py-3"
-          : "bg-transparent py-5"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/95 backdrop-blur-md shadow-sm border-b border-border",
+        isScrolled ? "py-4" : "py-5"
       )}
     >
       <div className="container mx-auto px-4">
@@ -43,16 +41,14 @@ export function Navbar() {
           <Link to="/" className="flex items-center gap-2">
             <span
               className={cn(
-                "font-display text-2xl font-bold tracking-tight transition-colors",
-                isScrolled ? "text-primary" : "text-primary"
+                "font-display text-2xl font-bold tracking-tight transition-colors text-foreground"
               )}
             >
               AMPERSAND
             </span>
             <span
               className={cn(
-                "font-display text-2xl font-light tracking-tight transition-colors",
-                isScrolled ? "text-olive-400" : "text-olive-400"
+                "font-display text-2xl font-light tracking-tight transition-colors text-muted-foreground"
               )}
             >
               PROFILES
@@ -66,20 +62,20 @@ export function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "font-body text-sm font-medium transition-colors hover:text-primary relative py-1",
+                  "font-body text-sm font-medium transition-colors hover:text-foreground relative py-1",
                   location.pathname === link.path
-                    ? "text-primary"
+                    ? "text-foreground"
                     : "text-muted-foreground",
                   location.pathname === link.path &&
-                    "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:rounded-full"
+                    "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-foreground after:rounded-full"
                 )}
               >
                 {link.name}
               </Link>
             ))}
-            <Button variant="olive" size="sm" asChild>
+            {/* <Button variant="secondary" size="sm" asChild>
               <Link to="/contact">Get in Touch</Link>
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -105,20 +101,20 @@ export function Navbar() {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "px-4 py-3 font-body text-sm font-medium transition-colors hover:bg-olive-50",
+                  "px-4 py-3 font-body text-sm font-medium transition-colors hover:bg-muted",
                   location.pathname === link.path
-                    ? "text-primary bg-olive-50"
+                    ? "text-foreground bg-muted"
                     : "text-muted-foreground"
                 )}
               >
                 {link.name}
               </Link>
             ))}
-            <div className="px-4 pt-2">
-              <Button variant="olive" size="sm" className="w-full" asChild>
+            {/* <div className="px-4 pt-2">
+              <Button variant="secondary" size="sm" className="w-full" asChild>
                 <Link to="/contact">Get in Touch</Link>
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

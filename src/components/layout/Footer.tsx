@@ -111,7 +111,7 @@ export function Footer() {
               </a>
               <div className="flex items-start gap-3 text-olive-200 font-body text-sm">
                 <MapPin size={16} className="text-olive-400 flex-shrink-0 mt-0.5" />
-                <span>South Asia Regional Office</span>
+                <span>kanakapura Road, Banglore</span>
               </div>
             </div>
             {/* Social Links */}
@@ -135,24 +135,10 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-olive-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-olive-700 mt-12 pt-8 flex justify-center items-center">
           <p className="text-olive-300 font-body text-sm">
-            © {new Date().getFullYear()} Ampersand Profiles. All rights reserved.
+            © {new Date().getFullYear()} Ampersand Profiles. All rights reserved | Developed by Build Your Vision
           </p>
-          <div className="flex items-center gap-6">
-            <Link
-              to="/privacy"
-              className="text-olive-300 hover:text-primary-foreground transition-colors font-body text-sm"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to="/terms"
-              className="text-olive-300 hover:text-primary-foreground transition-colors font-body text-sm"
-            >
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

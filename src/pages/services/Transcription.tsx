@@ -50,11 +50,33 @@ const Transcription = () => {
       {/* Hero Image */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <img
-            src={servicesTranscription}
-            alt="Transcription and Videography"
-            className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl"
-          />
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div>
+              <img
+                src={servicesTranscription}
+                alt="Transcription and Videography"
+                className="w-full rounded-2xl shadow-xl"
+              />
+            </div>
+            <div className="space-y-5">
+              <p className="font-body text-muted-foreground leading-relaxed">
+                Ampersand Profiles provides fast, accurate, and confidential transcription services designed for qualitative and B2B market research. Our experienced team captures discussions clearly, consistently, and in formats that support effective analysis and reporting.
+              </p>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                  Our Transcription Support Includes
+                </h3>
+                <ul className="list-disc list-inside space-y-2 font-body text-muted-foreground leading-relaxed">
+                  <li>Accurate transcription of focus groups and in-depth interviews</li>
+                  <li>Clear, well-structured session transcripts for easy review</li>
+                  <li>Capture of key statements and relevant context</li>
+                  <li>Support for both consumer and professional research studies</li>
+                  <li>Reliable turnaround times at competitive rates</li>
+                </ul>
+              </div>
+              
+            </div>
+          </div>
         </div>
       </section>
 

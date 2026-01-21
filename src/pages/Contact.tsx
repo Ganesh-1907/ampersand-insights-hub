@@ -107,7 +107,7 @@ const Contact = () => {
                       Visit Us
                     </h3>
                     <p className="font-body text-muted-foreground">
-                      South Asia Regional Office
+                      Kanakapura Road, Banglore
                     </p>
                   </div>
                 </div>

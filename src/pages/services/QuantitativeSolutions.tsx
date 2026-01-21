@@ -72,14 +72,37 @@ const QuantitativeSolutions = () => {
         </div>
       </section>
 
-      {/* Hero Image */}
-      <section className="py-12">
+      {/* Image + Description Section */}
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <img
-            src={servicesQuantitative}
-            alt="Quantitative Research"
-            className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl"
-          />
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+            <div>
+              <img
+                src={servicesQuantitative}
+                alt="Quantitative Research"
+                className="rounded-2xl shadow-xl w-full"
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="font-display text-3xl font-bold text-foreground">
+                Data-Driven Quantitative Research
+              </h2>
+              <p className="font-body text-muted-foreground leading-relaxed">
+                Ampersand Profiles delivers data-driven quantitative research solutions designed to provide measurable, reliable insights that support confident business decision-making. Our methodologies combine statistical rigor with practical interpretation, ensuring that data translates into clear strategic direction.
+              </p>
+              <p className="font-body text-muted-foreground leading-relaxed">
+                Our quantitative solutions help organizations:
+              </p>
+              <ul className="list-disc pl-6 font-body text-muted-foreground space-y-2">
+                <li>Measure market potential and customer demand</li>
+                <li>Track brand performance and campaign effectiveness</li>
+                <li>Evaluate pricing sensitivity and purchase drivers</li>
+                <li>Benchmark performance against competitors</li>
+                <li>Identify opportunities for growth and optimization</li>
+              </ul>
+             
+            </div>
+          </div>
         </div>
       </section>
 

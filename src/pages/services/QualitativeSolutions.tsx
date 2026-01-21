@@ -68,14 +68,29 @@ const QualitativeSolutions = () => {
         </div>
       </section>
 
-      {/* Hero Image */}
-      <section className="py-12">
+      {/* Image + Description Section */}
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <img
-            src={servicesQualitative}
-            alt="Qualitative Research"
-            className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl"
-          />
+          <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+            <div>
+              <img
+                src={servicesQualitative}
+                alt="Qualitative Research"
+                className="rounded-2xl shadow-xl w-full"
+              />
+            </div>
+            <div className="space-y-6">
+              <h2 className="font-display text-3xl font-bold text-foreground">
+                Comprehensive Qualitative Research
+              </h2>
+              <p className="font-body text-muted-foreground leading-relaxed">
+                Ampersand Profiles delivers comprehensive qualitative research solutions designed to uncover deep insights into attitudes, motivations, and behaviors that drive decision-making. At the core of our qualitative offering are expert respondent recruitment and professional project management, ensuring that every study is executed with precision, consistency, and care.
+              </p>
+              <p className="font-body text-muted-foreground leading-relaxed">
+                We support both qualitative and quantitative fieldwork by managing the entire research process—from sourcing the right participants to coordinating logistics and ensuring smooth project delivery. Our experienced team works closely with clients to maintain high research standards while adapting to the specific needs of each project.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

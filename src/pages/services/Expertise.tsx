@@ -50,11 +50,26 @@ const Expertise = () => {
       {/* Hero Image */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <img
-            src={servicesRealEstate}
-            alt="Real Estate Expertise"
-            className="w-full max-w-4xl mx-auto rounded-2xl shadow-xl"
-          />
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div>
+              <img
+                src={servicesRealEstate}
+                alt="Real Estate Expertise"
+                className="w-full rounded-2xl shadow-xl"
+              />
+            </div>
+            <div className="space-y-5">
+              <p className="font-body text-muted-foreground leading-relaxed">
+                Ampersand Profiles brings specialized expertise in real estate market research, supporting developers, investors, and planners with data-driven insights at every stage of decision-making. Our research approach combines deep market understanding with practical analysis to reduce risk and identify high-value opportunities.
+              </p>
+              <p className="font-body text-muted-foreground leading-relaxed">
+                We provide comprehensive location assessments, evaluating market dynamics, demand potential, competitive landscape, and surrounding infrastructure to help clients determine the viability of new developments or investments.
+              </p>
+              <p className="font-body text-muted-foreground leading-relaxed">
+                Our feasibility testing focuses on understanding commercial potential, customer demand, and pricing sensitivity, enabling informed decisions before major commitments are made. By integrating quantitative and qualitative insights, we ensure recommendations are both realistic and actionable.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
