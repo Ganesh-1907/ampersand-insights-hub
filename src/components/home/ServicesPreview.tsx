@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BarChart3, Users, FileText, Video } from "lucide-react";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -9,6 +10,7 @@ const services = [
     description:
       "Market segmentation, competitor analysis, NPS, CSAT, and comprehensive data-driven research.",
     link: "/services/quantitative",
+    color: "from-terracotta-500 to-terracotta-600",
   },
   {
     icon: Users,
@@ -16,6 +18,7 @@ const services = [
     description:
       "Focus groups, in-depth interviews, and expert moderation for rich consumer insights.",
     link: "/services/qualitative",
+    color: "from-warm-500 to-warm-600",
   },
   {
     icon: FileText,
@@ -23,6 +26,7 @@ const services = [
     description:
       "Single point of contact with proactive communication throughout your research journey.",
     link: "/services/project-management",
+    color: "from-terracotta-600 to-warm-600",
   },
   {
     icon: Video,
@@ -30,65 +34,89 @@ const services = [
     description:
       "Comprehensive analysis with actionable insights delivered in clear, professional reports.",
     link: "/services/analysis",
+    color: "from-warm-600 to-terracotta-500",
   },
 ];
 
 export function ServicesPreview() {
   return (
-    <section className="py-24 bg-olive-50">
-      <div className="container mx-auto px-4">
+    <section className="py-24 relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 gradient-warm" />
+      <div className="absolute inset-0 pattern-dots opacity-30" />
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-olive-500 font-body text-sm font-semibold uppercase tracking-wider">
+        <motion.div 
+          className="text-center max-w-3xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-body text-sm mb-4">
             What We Offer
           </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Comprehensive Research{" "}
-            <span className="text-primary">Solutions</span>
+            <span className="gradient-text">Solutions</span>
           </h2>
-          <p className="font-body text-muted-foreground leading-relaxed">
+          <p className="font-body text-muted-foreground leading-relaxed text-lg">
             We provide end-to-end market research services tailored to your
             business needs, from data collection to actionable insights.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Service Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Service Cards - Bento Style */}
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, index) => (
-            <Link
+            <motion.div
               key={index}
-              to={service.link}
-              className="group bg-background rounded-xl p-6 card-elevated hover:border-olive-200 border border-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <div className="w-12 h-12 bg-olive-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                <service.icon className="w-6 h-6 text-olive-600 group-hover:text-primary-foreground" />
-              </div>
-              <h3 className="font-display text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                {service.description}
-              </p>
-              <div className="mt-4 flex items-center gap-1 text-olive-600 font-body text-sm font-medium group-hover:text-primary transition-colors">
-                Learn more
-                <ArrowRight
-                  size={16}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </div>
-            </Link>
+              <Link
+                to={service.link}
+                className="group block p-8 rounded-3xl bg-card border border-border/50 shadow-warm hover:shadow-warm-lg transition-all duration-500 hover:-translate-y-2"
+              >
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <service.icon className="w-7 h-7 text-primary-foreground" />
+                </div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="font-body text-muted-foreground leading-relaxed mb-4">
+                  {service.description}
+                </p>
+                <div className="flex items-center gap-2 text-primary font-body text-sm font-medium">
+                  Learn more
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-2 transition-transform duration-300"
+                  />
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
-          <Button variant="olive" size="lg" asChild>
+        <motion.div 
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <Button size="lg" className="group gradient-primary text-primary-foreground rounded-full px-8 shadow-warm hover:shadow-warm-lg transition-all duration-300" asChild>
             <Link to="/services" className="flex items-center gap-2">
               View All Services
-              <ArrowRight size={18} />
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

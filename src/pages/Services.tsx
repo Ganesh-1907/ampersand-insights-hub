@@ -1,5 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { ServiceCard } from "@/components/services/ServiceCard";
+import { motion } from "framer-motion";
 import {
   Building2,
   BarChart3,
@@ -11,6 +12,7 @@ import {
   Video,
   PieChart,
   Briefcase,
+  Sparkles,
 } from "lucide-react";
 
 import servicesRealEstate from "@/assets/services-real-estate.jpg";
@@ -32,13 +34,6 @@ const services = [
     image: globalResearch,
     link: "/services/expertise",
   },
-  // {
-  //   icon: PieChart,
-  //   title: "Solutions",
-  //   description: "Comprehensive quantitative and qualitative research solutions tailored to your business needs.",
-  //   image: servicesQuantitative,
-  //   link: "/services/solutions",
-  // },
   {
     icon: BarChart3,
     title: "Quantitative Solutions",
@@ -101,27 +96,44 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-olive-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <span className="text-olive-500 font-body text-sm font-semibold uppercase tracking-wider">
-              Our Services
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-4 mb-6">
+      <section className="pt-32 pb-20 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 pattern-dots opacity-50" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-terracotta-200/20 to-transparent rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-body text-sm mb-6"
+            >
+              <Sparkles className="w-4 h-4" />
+              <span>Our Services</span>
+            </motion.div>
+            
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Comprehensive Research{" "}
-              <span className="text-primary">Solutions</span>
+              <span className="gradient-text">Solutions</span>
             </h1>
-            <p className="font-body text-lg text-muted-foreground leading-relaxed">
+            <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               From data collection to actionable insights, we offer end-to-end market research services designed to help you make impactful business decisions.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-24">
+      {/* Services Bento Grid */}
+      <section className="py-16 pb-32">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
@@ -130,6 +142,7 @@ const Services = () => {
                 description={service.description}
                 image={service.image}
                 link={service.link}
+                index={index}
               />
             ))}
           </div>
