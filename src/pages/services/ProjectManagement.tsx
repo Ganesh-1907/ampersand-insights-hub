@@ -40,9 +40,9 @@ const ProjectManagement = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-olive-50">
+      <section className="pt-32 pb-5 bg-olive-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Link
               to="/services"
               className="inline-flex items-center gap-2 text-olive-600 hover:text-primary transition-colors mb-6 font-body"
@@ -62,14 +62,14 @@ const ProjectManagement = () => {
       </section>
 
       {/* Content */}
-      <section className="py-24">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <div>
               <img
                 src={servicesProjectManagement}
                 alt="Project Management"
-                className="rounded-2xl shadow-xl w-full"
+                className="rounded-2xl shadow-xl w-full max-h-96 object-cover"
               />
             </div>
             <div className="space-y-6">
@@ -88,7 +88,7 @@ const ProjectManagement = () => {
       </section>
 
       {/* Features */}
-      <section className="py-24 bg-olive-50">
+      <section className="py-12 bg-olive-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {features.map((feature, index) => (
@@ -96,8 +96,8 @@ const ProjectManagement = () => {
                 key={index}
                 className="bg-background rounded-xl p-6 card-elevated"
               >
-                <div className="w-12 h-12 bg-olive-100 rounded-lg flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-olive-600" />
+                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                  <feature.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-display text-xl font-semibold text-foreground mb-2">
                   {feature.title}
@@ -112,7 +112,7 @@ const ProjectManagement = () => {
       </section>
 
       {/* Process */}
-      <section className="py-24">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">

@@ -46,8 +46,8 @@ export function HeroSection() {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-warm-100 font-body text-sm"
           >
-            <Sparkles className="w-4 h-4 text-terracotta-300" />
-            <span>Global Market Research Excellence</span>
+            <Sparkles className="w-4 h-4 text-primary" />
+            <span className="text-primary">Global Market Research Excellence</span>
           </motion.div>
 
           <motion.h1 

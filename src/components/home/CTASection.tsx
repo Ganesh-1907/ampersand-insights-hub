@@ -14,7 +14,7 @@ export function CTASection() {
           <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
             Ready to Make Data-Driven Decisions?
           </h2>
-          <p className="font-body text-lg text-olive-100 mb-8 leading-relaxed">
+          <p className="font-body text-lg text-primary-foreground mb-8 leading-relaxed">
             Partner with Ampersand Profiles and gain the insights you need to
             stay ahead in your market. Let's discuss how we can help transform
             your business.
@@ -31,12 +31,13 @@ export function CTASection() {
               </Link>
             </Button>
             <Button
-              variant="ghost"
+              variant="heroOutline"
               size="xl"
               className="text-primary-foreground hover:bg-olive-600/30"
               asChild
             >
-              <Link to="/services">Explore Services</Link>
+              <Link to="/services" className="flex items-center gap-2">Explore Services  <ArrowRight size={20} /></Link>
+              
             </Button>
           </div>
         </div>

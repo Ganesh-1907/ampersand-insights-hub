@@ -26,9 +26,9 @@ const Transcription = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-olive-50">
+      <section className="pt-32 pb-12 bg-olive-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Link
               to="/services"
               className="inline-flex items-center gap-2 text-olive-600 hover:text-primary transition-colors mb-6 font-body"
@@ -55,7 +55,7 @@ const Transcription = () => {
               <img
                 src={servicesTranscription}
                 alt="Transcription and Videography"
-                className="w-full rounded-2xl shadow-xl"
+                className="w-full rounded-2xl shadow-xl max-h-96 object-cover"
               />
             </div>
             <div className="space-y-5">
@@ -81,17 +81,17 @@ const Transcription = () => {
       </section>
 
       {/* Services */}
-      <section className="py-24">
+      <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-6xl mx-auto space-y-8">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="bg-background rounded-xl p-8 card-elevated"
               >
                 <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 bg-olive-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <service.icon className="w-7 h-7 text-olive-600" />
+                  <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                    <service.icon className="w-7 h-7 text-white" />
                   </div>
                   <div>
                     <h3 className="font-display text-xl font-semibold text-foreground mb-3">

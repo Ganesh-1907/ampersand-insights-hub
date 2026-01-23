@@ -29,35 +29,22 @@ export function Navbar() {
   }, [location.pathname]);
 
   return (
-    <motion.header
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+    <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        isScrolled 
-          ? "py-3 glass shadow-warm" 
-          : "py-5 bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 backdrop-blur",
+        isScrolled
+          ? "py-3 bg-white/90 shadow-warm"
+          : "py-5 bg-white/80 shadow"
       )}
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <span
-              className={cn(
-                "font-display text-2xl font-bold tracking-tight transition-colors",
-                isScrolled ? "text-foreground" : "text-primary-foreground"
-              )}
-            >
+            <span className="font-display text-2xl font-bold tracking-tight text-primary">
               AMPERSAND
             </span>
-            <span
-              className={cn(
-                "font-display text-2xl font-light tracking-tight transition-colors",
-                isScrolled ? "text-muted-foreground" : "text-warm-300"
-              )}
-            >
+            <span className="font-display text-2xl font-light tracking-tight text-warm-500">
               PROFILES
             </span>
           </Link>
@@ -70,13 +57,9 @@ export function Navbar() {
                 to={link.path}
                 className={cn(
                   "font-body text-sm font-medium transition-all duration-300 px-4 py-2 rounded-full relative",
-                  isScrolled
-                    ? location.pathname === link.path
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                    : location.pathname === link.path
-                      ? "text-primary-foreground bg-white/15"
-                      : "text-warm-200 hover:text-primary-foreground hover:bg-white/10"
+                  location.pathname === link.path
+                    ? "text-white bg-primary"
+                    : "text-primary hover:text-white hover:bg-primary/80"
                 )}
               >
                 {link.name}
@@ -88,9 +71,7 @@ export function Navbar() {
           <button
             className={cn(
               "md:hidden p-2 rounded-full transition-colors",
-              isScrolled 
-                ? "text-foreground hover:bg-muted" 
-                : "text-primary-foreground hover:bg-white/10"
+              "text-primary hover:bg-primary/80 hover:text-white"
             )}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
@@ -109,7 +90,7 @@ export function Navbar() {
               transition={{ duration: 0.3 }}
               className="md:hidden overflow-hidden"
             >
-              <div className="flex flex-col gap-2 py-4 mt-4 glass rounded-2xl p-4">
+              <div className="flex flex-col gap-2 py-4 mt-4 bg-white/95 rounded-2xl p-4 shadow">
                 {navLinks.map((link, index) => (
                   <motion.div
                     key={link.path}
@@ -122,8 +103,8 @@ export function Navbar() {
                       className={cn(
                         "block px-4 py-3 font-body text-sm font-medium rounded-xl transition-colors",
                         location.pathname === link.path
-                          ? "text-primary bg-primary/10"
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                          ? "text-white bg-primary"
+                          : "text-primary hover:text-white hover:bg-primary/80"
                       )}
                     >
                       {link.name}
@@ -135,6 +116,6 @@ export function Navbar() {
           )}
         </AnimatePresence>
       </div>
-    </motion.header>
+    </header>
   );
 }

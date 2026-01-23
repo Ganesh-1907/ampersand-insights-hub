@@ -13,7 +13,7 @@ const highlights = [
 
 export function AboutPreview() {
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-24 gradient-warm relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-20 right-0 w-72 h-72 bg-gradient-to-bl from-primary/5 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-0 w-72 h-72 bg-gradient-to-tr from-terracotta-200/10 to-transparent rounded-full blur-3xl" />

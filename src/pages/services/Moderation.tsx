@@ -19,9 +19,9 @@ const Moderation = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-olive-50">
+      <section className="pt-32 pb-5 bg-olive-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Link
               to="/services"
               className="inline-flex items-center gap-2 text-olive-600 hover:text-primary transition-colors mb-6 font-body"
@@ -41,17 +41,17 @@ const Moderation = () => {
       </section>
 
       {/* Content */}
-      <section className="py-24">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <div>
               <img
                 src={servicesModeration}
                 alt="Professional Moderation"
-                className="rounded-2xl shadow-xl w-full"
+                className="rounded-2xl shadow-xl w-full max-h-96 object-cover"
               />
             </div>
-            <div className="space-y-6">
+            <div className="space-y-3">
               <h2 className="font-display text-3xl font-bold text-foreground">
                 The Art of Skilled Moderation
               </h2>
@@ -70,9 +70,9 @@ const Moderation = () => {
       </section>
 
       {/* Skills Grid */}
-      <section className="py-24 bg-olive-50">
+      <section className="py-12 bg-olive-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h2 className="font-display text-3xl font-bold text-foreground text-center mb-12">
               Key Moderation Skills
             </h2>
@@ -89,7 +89,7 @@ const Moderation = () => {
       </section>
 
       {/* Selection */}
-      <section className="py-24">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-display text-3xl font-bold text-foreground mb-6">

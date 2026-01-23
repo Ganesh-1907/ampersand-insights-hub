@@ -26,9 +26,9 @@ const Expertise = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-olive-50">
+      <section className="pt-32 pb-5 bg-olive-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Link
               to="/services"
               className="inline-flex items-center gap-2 text-olive-600 hover:text-primary transition-colors mb-6 font-body"
@@ -55,10 +55,10 @@ const Expertise = () => {
               <img
                 src={servicesRealEstate}
                 alt="Real Estate Expertise"
-                className="w-full rounded-2xl shadow-xl"
+                className="w-full rounded-2xl shadow-xl max-h-96 object-cover"
               />
             </div>
-            <div className="space-y-5">
+            <div className="space-y-3">
               <p className="font-body text-muted-foreground leading-relaxed">
                 Ampersand Profiles brings specialized expertise in real estate market research, supporting developers, investors, and planners with data-driven insights at every stage of decision-making. Our research approach combines deep market understanding with practical analysis to reduce risk and identify high-value opportunities.
               </p>
@@ -74,10 +74,10 @@ const Expertise = () => {
       </section>
 
       {/* Real Estate Section */}
-      <section className="py-24">
+      <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-4 mb-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex items-center gap-4 mb-4">
               <div className="w-14 h-14 bg-olive-100 rounded-xl flex items-center justify-center">
                 <Building2 className="w-7 h-7 text-olive-600" />
               </div>
@@ -93,9 +93,9 @@ const Expertise = () => {
               {expertise.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-background rounded-xl p-6 card-elevated text-center"
+                  className=" rounded-xl p-6 card-elevated text-center"
                 >
-                  <div className="w-14 h-14 mx-auto bg-olive-100 rounded-xl flex items-center justify-center mb-4">
+                  <div className="w-14 h-14 mx-auto bg-primary shadow-md rounded-xl flex items-center justify-center mb-4">
                     <item.icon className="w-7 h-7 text-olive-600" />
                   </div>
                   <h3 className="font-display text-lg font-semibold text-foreground mb-3">

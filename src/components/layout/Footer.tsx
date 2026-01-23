@@ -154,10 +154,10 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-warm-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-warm-400 font-body text-sm">
+            <p className="text-primary-foreground  font-body text-sm">
               © {new Date().getFullYear()} Ampersand Profiles. All rights reserved.
             </p>
-            <p className="text-warm-500 font-body text-sm">
+            <p className="text-primary-foreground  font-body text-sm">
               Developed by Build Your Vision
             </p>
           </div>

@@ -8,9 +8,9 @@ const DiscussionGuide = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-olive-50">
+      <section className="pt-32 pb-5 bg-olive-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <Link
               to="/services"
               className="inline-flex items-center gap-2 text-olive-600 hover:text-primary transition-colors mb-6 font-body"
@@ -30,14 +30,14 @@ const DiscussionGuide = () => {
       </section>
 
       {/* Content */}
-      <section className="py-24">
+      <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <div>
               <img
                 src={servicesDiscussionGuide}
                 alt="Discussion Guide Design"
-                className="rounded-2xl shadow-xl w-full"
+                className="rounded-2xl shadow-xl w-full max-h-96 object-cover"
               />
             </div>
             <div className="space-y-6">

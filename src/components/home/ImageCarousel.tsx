@@ -45,21 +45,27 @@ export function ImageCarousel() {
   }, [nextSlide]);
 
   return (
-    <section className="py-24 bg-olive-800 overflow-hidden">
+    <section className="py-12 gradient-warm overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-olive-300 font-body text-sm font-semibold uppercase tracking-wider">
+          <span className="inline-flex items-center px-5 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             Our Work
           </span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mt-2">
-            Research in Action
+
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+            Our Work <span className="gradient-text">Research in Action</span>
           </h2>
+
+          <p className="font-body text-lg text-olive-200 leading-relaxed">
+            At Ampersand Profiles, our research is more than data—it's actionable
+            insight. From global networks to expert teams
+          </p>
         </div>
 
         {/* Carousel */}
-        <div className="relative max-w-5xl mx-auto">
-          <div className="overflow-hidden rounded-2xl">
+        <div className="relative max-w-4xl mx-auto">
+          <div className="overflow-hidden rounded-3xl shadow-lg">
             <div
               className="flex transition-transform duration-500 ease-out"
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -67,19 +73,21 @@ export function ImageCarousel() {
               {slides.map((slide, index) => (
                 <div
                   key={index}
-                  className="min-w-full relative aspect-video"
+                  className="min-w-full relative aspect-video flex items-center justify-center"
                 >
                   <img
                     src={slide.image}
                     alt={slide.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-3xl"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-olive-900/80 via-transparent to-transparent" />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-olive-900/80 via-transparent to-transparent rounded-3xl" />
+
                   <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <h3 className="font-display text-2xl font-bold text-primary-foreground mb-2">
+                    <h3 className="font-display text-2xl font-bold text-primary-foreground mb-2 drop-shadow">
                       {slide.title}
                     </h3>
-                    <p className="font-body text-olive-200">
+                    <p className="font-body text-olive-200 drop-shadow">
                       {slide.description}
                     </p>
                   </div>
@@ -96,6 +104,7 @@ export function ImageCarousel() {
           >
             <ChevronLeft size={24} />
           </button>
+
           <button
             onClick={nextSlide}
             className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-primary-foreground/20 backdrop-blur-sm rounded-full flex items-center justify-center text-primary-foreground hover:bg-primary-foreground/30 transition-colors"
@@ -110,10 +119,10 @@ export function ImageCarousel() {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
+                className={`h-2 rounded-full transition-all ${
                   index === currentIndex
                     ? "bg-primary-foreground w-8"
-                    : "bg-olive-400"
+                    : "bg-olive-400 w-2"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />

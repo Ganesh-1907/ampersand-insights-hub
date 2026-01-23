@@ -96,7 +96,7 @@ const Services = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="pt-32 pb-5 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 pattern-dots opacity-50" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl" />
@@ -131,8 +131,8 @@ const Services = () => {
       </section>
 
       {/* Services Bento Grid */}
-      <section className="py-16 pb-32">
-        <div className="container mx-auto px-4">
+      <section className="py-12 pb-32">
+        <div className="container mx-auto px-4 ">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {services.map((service, index) => (
               <ServiceCard

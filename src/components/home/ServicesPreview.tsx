@@ -40,7 +40,7 @@ const services = [
 
 export function ServicesPreview() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 gradient-warm" />
       <div className="absolute inset-0 pattern-dots opacity-30" />
