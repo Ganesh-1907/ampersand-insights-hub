@@ -30,63 +30,72 @@ const services = [
   {
     icon: Briefcase,
     title: "Expertise",
-    description: "Specialized knowledge in real estate, location assessment, feasibility testing, and consumer preferences.",
+    description:
+      "Specialized knowledge in real estate, location assessment, feasibility testing, and consumer preferences.",
     image: globalResearch,
     link: "/services/expertise",
   },
   {
     icon: BarChart3,
     title: "Quantitative Solutions",
-    description: "Market segmentation, competitor analysis, NPS, CSAT, branding studies, and pricing tests.",
+    description:
+      "Market segmentation, competitor analysis, NPS, CSAT, branding studies, and pricing tests.",
     image: servicesQuantitative,
     link: "/services/quantitative",
   },
   {
     icon: Users,
     title: "Qualitative Solutions",
-    description: "Focus groups, interviews, moderation, and in-depth consumer insight research.",
+    description:
+      "Focus groups, interviews, moderation, and in-depth consumer insight research.",
     image: servicesQualitative,
     link: "/services/qualitative",
   },
   {
     icon: ClipboardList,
     title: "Project Management",
-    description: "Single point of contact with proactive communication throughout your research journey.",
+    description:
+      "Single point of contact with proactive communication throughout your research journey.",
     image: servicesProjectManagement,
     link: "/services/project-management",
   },
   {
     icon: UserCheck,
     title: "Recruitment",
-    description: "Systematic recruitment process to find the right respondents for your market research.",
+    description:
+      "Systematic recruitment process to find the right respondents for your market research.",
     image: servicesRecruitment,
     link: "/services/recruitment",
   },
   {
     icon: FileText,
     title: "Discussion Guide Design & Review",
-    description: "Well-structured questionnaires and flexible discussion guides for effective research.",
+    description:
+      "Well-structured questionnaires and flexible discussion guides for effective research.",
     image: servicesDiscussionGuide,
     link: "/services/discussion-guide",
   },
   {
     icon: Mic,
     title: "Moderation",
-    description: "Expert moderators creating the right environment for insightful focus group discussions.",
+    description:
+      "Expert moderators creating the right environment for insightful focus group discussions.",
     image: servicesModeration,
     link: "/services/moderation",
   },
   {
     icon: Video,
     title: "Transcription & Videography",
-    description: "Fast and accurate note-taking, transcription, and professional videography services.",
+    description:
+      "Fast and accurate note-taking, transcription, and professional videography services.",
     image: servicesTranscription,
     link: "/services/transcription",
   },
   {
     icon: Building2,
     title: "Analysis & Reporting",
-    description: "Comprehensive analysis with actionable insights delivered in clear, professional reports.",
+    description:
+      "Comprehensive analysis with actionable insights delivered in clear, professional reports.",
     image: servicesAnalysis,
     link: "/services/analysis",
   },
@@ -101,9 +110,9 @@ const Services = () => {
         <div className="absolute inset-0 pattern-dots opacity-50" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-terracotta-200/20 to-transparent rounded-full blur-3xl" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             className="max-w-4xl mx-auto text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -118,33 +127,67 @@ const Services = () => {
               <Sparkles className="w-4 h-4" />
               <span>Our Services</span>
             </motion.div>
-            
+
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Comprehensive Research{" "}
               <span className="gradient-text">Solutions</span>
             </h1>
             <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              From data collection to actionable insights, we offer end-to-end market research services designed to help you make impactful business decisions.
+              From data collection to actionable insights, we offer end-to-end
+              market research services designed to help you make impactful
+              business decisions.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Services Bento Grid */}
+      {/* Services Alternating Rows */}
       <section className="py-12 pb-32">
-        <div className="container mx-auto px-4 ">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                image={service.image}
-                link={service.link}
-                index={index}
-              />
-            ))}
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col gap-12">
+            {services.map((service, index) => {
+              const isImageLeft = index % 2 === 0;
+              return (
+                <div key={index} className="w-full flex justify-center">
+                  <div
+                    className={`flex w-full md:w-5/6 h-56 md:h-64 shadow-lg bg-white overflow-hidden items-stretch ${isImageLeft ? "flex-row rounded-l-full rounded-r-3xl" : "flex-row-reverse rounded-r-full rounded-l-3xl"}`}
+                  >
+                    {/* Image */}
+                    <div
+                      className={`w-2/5 h-full flex items-center ${isImageLeft ? "rounded-l-full" : "rounded-r-full"} overflow-hidden`}
+                    >
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    {/* Text */}
+                    <div
+                      className={`w-3/5 flex flex-col justify-center px-6 py-6 ${isImageLeft ? "rounded-r-3xl" : "rounded-l-3xl"}`}
+                    >
+                      <div className="flex items-center gap-3 mb-2">
+                        <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary transition-transform duration-300 group-hover:scale-110 animate-fade-in">
+                          <service.icon className="w-6 h-6 text-white transition-transform duration-300" />
+                        </span>
+                        <h3 className="font-display text-2xl font-bold text-foreground">
+                          {service.title}
+                        </h3>
+                      </div>
+                      <p className="font-body text-muted-foreground text-lg mb-4 italic" style={{ fontFamily: 'cursive, sans-serif' }}>
+                        {service.description}
+                      </p>
+                      <a
+                        href={service.link}
+                        className="inline-flex items-center gap-1 mt-2 text-primary font-medium hover:underline transition"
+                      >
+                        Learn More →
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

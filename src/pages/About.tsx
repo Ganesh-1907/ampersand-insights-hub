@@ -124,66 +124,89 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
+     <section className="py-16 relative overflow-hidden">
+  {/* Background Glow */}
+  <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-transparent" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
+  <div className="container mx-auto px-4 relative z-10">
+    {/* Header */}
+    <motion.div
+      className="text-center max-w-3xl mx-auto mb-12"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+    >
+      <h2 className="font-display text-4xl md:text-5xl font-bold mb-5">
+        What We Promise{" "}
+        <span className="gradient-text">to Our Clients</span>
+      </h2>
+
+      <p className="text-muted-foreground text-lg leading-relaxed">
+        Working with Ampersand Profiles helps you make impactful decisions
+        faster and stay ahead of what’s next.
+      </p>
+    </motion.div>
+
+    {/* Cards */}
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 place-items-center">
+      {values.map((value, index) => (
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-20"
-          initial={{ opacity: 0, y: 30 }}
+          key={index}
+          initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          className="group"
         >
+          <div
+            className="relative w-[300px] h-[360px]
+                       bg-card/95 backdrop-blur-2xl
+                       border border-border/60
+                       shadow-[0_20px_40px_-10px_rgba(0,0,0,0.35)]
+                       transition-all duration-500
+                       hover:-translate-y-6
+                       hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.45)]
+                       hover:rotate-[0.6deg]
+                       vase-shape
+                       p-10 flex flex-col items-center text-center"
+          >
+            {/* Light Sheen */}
+            <div
+              className="absolute inset-0 rounded-[32px]
+                         bg-gradient-to-br from-white/40 via-white/10 to-transparent
+                         opacity-70 pointer-events-none"
+            />
 
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-5">
-            What We Promise{" "}
-            <span className="gradient-text">to Our Clients</span>
-          </h2>
+            {/* Edge Highlight */}
+            <div
+              className="absolute inset-0 rounded-[32px]
+                         ring-1 ring-white/20 pointer-events-none"
+            />
 
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Working with Ampersand Profiles helps you make impactful decisions
-            faster and stay ahead of what’s next.
-          </p>
-        </motion.div>
-
-        {/* Cards */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {values.map((value, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
+            {/* Icon */}
+            <div
+              className="relative z-10 w-18 h-18 rounded-full bg-primary
+                         flex items-center justify-center mb-8 shadow-xl"
             >
-              <div className="h-full rounded-2xl border border-border bg-card/70 backdrop-blur-xl p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
-                {/* Icon */}
-                <div className="mb-6 flex justify-center">
-                  <div
-                    className={`w-16 h-16 rounded-xl bg-primary flex items-center justify-center shadow-md`}
-                  >
-                    <value.icon className="w-8 h-8 text-white" />
-                  </div>
-                </div>
+              <value.icon className="w-9 h-9 text-white" />
+            </div>
 
-                {/* Content */}
-                <h3 className="text-xl font-display font-semibold text-foreground text-center mb-3">
-                  {value.title}
-                </h3>
+            {/* Content */}
+            <h3 className="relative z-10 text-2xl font-display font-semibold mb-4">
+              {value.title}
+            </h3>
 
-                <p className="text-sm text-muted-foreground text-center leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+            <p className="relative z-10 text-base text-muted-foreground leading-relaxed">
+              {value.description}
+            </p>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Global Reach */}
       <section className="py-12">

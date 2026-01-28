@@ -7,41 +7,40 @@ const values = [
     title: "Impactful",
     description:
       "The information we provide is impactful and will have a positive impact on the baseline for your business.",
-    gradient: "from-blue-500 to-blue-700",
+    rotate: -18,
   },
   {
     icon: Lightbulb,
     title: "Innovative",
     description:
       "Our work is innovative and based on the latest advances in technology. We are acrobatic and creative.",
-    gradient: "from-indigo-500 to-indigo-700",
+    rotate: -6,
   },
   {
     icon: Users,
     title: "Expert",
     description:
       "Our team encompasses experts who apply their knowledge to provide you with clear direction and insightful information.",
-    gradient: "from-sky-500 to-sky-700",
+    rotate: 6,
   },
   {
     icon: Handshake,
     title: "Engaged & Advisory",
     description:
       "We are proactive. When working with us, the spirit of partnership and shared responsibility is inherent.",
-    gradient: "from-cyan-500 to-cyan-700",
+    rotate: 18,
   },
 ];
 
 export function WhyChooseUs() {
   return (
-    <section className="py-16 relative overflow-hidden">
-      {/* Background Glow */}
+    <section className="py-12 relative overflow-hidden">
       <div className="absolute inset-0 gradient-warm" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-20"
+          className="text-center max-w-3xl mx-auto mb-24"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -52,8 +51,7 @@ export function WhyChooseUs() {
           </span>
 
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-5">
-            Why Choose{" "}
-            <span className="gradient-text">Ampersand Profiles?</span>
+            Why Choose <span className="gradient-text">Ampersand Profiles?</span>
           </h2>
 
           <p className="text-muted-foreground text-lg leading-relaxed">
@@ -62,29 +60,33 @@ export function WhyChooseUs() {
           </p>
         </motion.div>
 
-        {/* Cards */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {/* Semi-Circle Cards */}
+        <div className="relative flex justify-center items-end h-[300px] gap-6 flex-wrap md:flex-nowrap">
           {values.map((value, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
+              style={{ rotate: value.rotate }}
+              className="origin-bottom"
             >
-              <div className="h-full rounded-2xl border border-border bg-card/70 backdrop-blur-xl p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <div className="group w-[260px] h-[320px] bg-card/80 backdrop-blur-xl 
+                              border border-border shadow-xl 
+                              rounded-t-[140px] rounded-b-2xl 
+                              px-6 pt-8 pb-16
+                              transition-all duration-300 
+                              hover:-translate-y-4 hover:scale-105">
+                
                 {/* Icon */}
-                <div className="mb-6 flex justify-center">
-                  <div
-                    className={`w-16 h-16 rounded-xl bg-primary ${value.gradient} flex items-center justify-center shadow-md`}
-                  >
-                    <value.icon className="w-8 h-8 text-white" />
-                  </div>
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary 
+                                flex items-center justify-center shadow-lg">
+                  <value.icon className="w-8 h-8 text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-display font-semibold text-foreground text-center mb-3">
+                <h3 className="text-xl font-display font-semibold text-center mb-3">
                   {value.title}
                 </h3>
 

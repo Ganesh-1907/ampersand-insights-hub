@@ -1,112 +1,160 @@
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
-import { motion } from "framer-motion";
-import heroBg from "@/assets/hero-bg.jpg";
+
+const items = [
+  {
+    src: "src/assets/global-research.jpg",
+    title: "Global Research",
+    desc: "Multi-country market intelligence solutions",
+  },
+  {
+    src: "src/assets/services-qualitative.jpg",
+    title: "Qualitative Studies",
+    desc: "In-depth interviews & focus groups",
+  },
+  {
+    src: "src/assets/services-project-management.jpg",
+    title: "Project Management",
+    desc: "End-to-end research execution",
+  },
+  {
+    src: "src/assets/services-recruitment.jpg",
+    title: "Recruitment Services",
+    desc: "Targeted respondent sourcing",
+  },
+  {
+    src: "src/assets/global-research.jpg",
+    title: "Global Expansion",
+    desc: "Research-backed market entry strategies",
+  },
+];
 
 export function HeroSection() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % items.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getPosition = (index) => {
+    const diff = (index - active + items.length) % items.length;
+    if (diff === 0) return "center";
+    if (diff === 1) return "right1";
+    if (diff === 2) return "right2";
+    if (diff === items.length - 1) return "left1";
+    if (diff === items.length - 2) return "left2";
+    return "hidden";
+  };
+
+  const variants = {
+    center: { x: 0, scale: 1.25, opacity: 1, zIndex: 5 },
+    right1: { x: 300, scale: 0.9, opacity: 0.6, zIndex: 3 },
+    right2: { x: 580, scale: 0.75, opacity: 0.3, zIndex: 1 },
+    left1: { x: -300, scale: 0.9, opacity: 0.6, zIndex: 3 },
+    left2: { x: -580, scale: 0.75, opacity: 0.3, zIndex: 1 },
+    hidden: { opacity: 0, scale: 0.5 },
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-warm-900 to-warm-700">
+      <div className="max-w-6xl w-full px-6 text-center space-y-5 pt-28">
 
-      {/* Warm Gradient Overlay */}
-      <div className="absolute inset-0 hero-overlay" />
-
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 pattern-dots opacity-30" />
-      
-      {/* Floating Shapes */}
-      <motion.div
-        className="absolute top-20 right-20 w-64 h-64 rounded-full bg-gradient-to-br from-terracotta-400/20 to-terracotta-600/10 blur-3xl"
-        animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-gradient-to-br from-warm-300/20 to-warm-500/10 blur-3xl"
-        animate={{ y: [0, 20, 0], x: [0, -15, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-32 text-center">
-        <motion.div 
-          className="max-w-4xl mx-auto space-y-8"
-          initial={{ opacity: 0, y: 40 }}
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm mx-auto"
         >
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-warm-100 font-body text-sm"
-          >
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-primary">Global Market Research Excellence</span>
-          </motion.div>
-
-          <motion.h1 
-            className="font-display text-4xl md:text-5xl lg:text-7xl font-bold text-primary-foreground leading-tight"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            Data-Driven Insights for
-            <br />
-            <span className="bg-gradient-to-r from-terracotta-300 via-terracotta-200 to-warm-200 bg-clip-text text-transparent">
-              Impactful Decisions
-            </span>
-          </motion.h1>
-
-          <motion.p 
-            className="font-body text-lg md:text-xl text-warm-200 max-w-2xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.7 }}
-          >
-            A global market research firm specializing in multi-country and
-            international research. We provide splendid data for both quantitative
-            and qualitative studies across South Asia.
-          </motion.p>
-
-          <motion.div 
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6 }}
-          >
-            <Button size="lg" className="group gradient-primary text-primary-foreground border-0 px-8 py-6 text-base rounded-full shadow-warm-lg hover:shadow-2xl transition-all duration-300" asChild>
-              <Link to="/services" className="flex items-center gap-2">
-                Explore Services
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 py-6 text-base rounded-full border-warm-300/30 text-warm-100 hover:bg-warm-100/10 hover:text-warm-50 backdrop-blur-sm" asChild>
-              <Link to="/contact">Contact Us</Link>
-            </Button>
-          </motion.div>
+          <Sparkles className="w-4 h-4 text-primary" />
+          <span className="text-primary">Global Market Research Excellence</span>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{ delay: 1, duration: 1.5, repeat: Infinity }}
+        {/* Heading */}
+        <motion.h1
+          className="text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <div className="w-6 h-10 border-2 border-warm-300/50 rounded-full flex justify-center">
-            <motion.div 
-              className="w-1 h-2 bg-terracotta-300 rounded-full mt-2"
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
-          </div>
-        </motion.div>
+          Data-Driven Insights <br />
+          That Power Smarter Decisions
+        </motion.h1>
+
+        {/* Description */}
+        <motion.p
+          className="text-lg text-warm-200 max-w-3xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          We help organizations uncover meaningful insights through global,
+          multi-country research—combining qualitative depth, quantitative rigor,
+          and strategic execution.
+        </motion.p>
+
+        {/* CAROUSEL */}
+        <div className="relative h-[400px] flex items-center justify-center">
+          {items.map((item, index) => (
+            <motion.div
+              key={index}
+              variants={variants}
+              animate={getPosition(index)}
+              transition={{ duration: 1, ease: "easeInOut" }}
+              className="absolute"
+            >
+              <div className="relative w-[420px] h-[300px] rounded-2xl overflow-hidden shadow-2xl">
+
+                {/* Image */}
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+
+                {/* TEXT OVERLAY (ONLY ACTIVE IMAGE) */}
+                {index === active && (
+                  <motion.div
+                    className="absolute inset-0 flex items-end"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <div className="w-full p-6 bg-gradient-to-t from-black/70 to-transparent">
+                      <h3 className="text-xl font-semibold text-white">
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-warm-200 mt-1">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="flex justify-center gap-4 pb-16">
+          <Button size="lg" className="rounded-full px-10" asChild>
+            <Link to="/services">
+              Explore Services
+              <ArrowRight className="ml-2" />
+            </Link>
+          </Button>
+
+          <Button size="lg" variant="outline" className="rounded-full px-10" asChild>
+            <Link to="/contact">Contact Us</Link>
+          </Button>
+        </div>
+
       </div>
     </section>
   );

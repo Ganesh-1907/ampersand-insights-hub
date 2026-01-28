@@ -40,35 +40,34 @@ const services = [
 
 export function ServicesPreview() {
   return (
-    <section className="py-16 relative overflow-hidden">
-      {/* Background */}
+    <section className="py-20 relative overflow-hidden">
       <div className="absolute inset-0 gradient-warm" />
       <div className="absolute inset-0 pattern-dots opacity-30" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
+
         {/* Header */}
-        <motion.div 
-          className="text-center max-w-3xl mx-auto mb-16"
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-body text-sm mb-4">
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             What We Offer
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Comprehensive Research{" "}
-            <span className="gradient-text">Solutions</span>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+            Comprehensive <span className="gradient-text">Solutions</span>
           </h2>
-          <p className="font-body text-muted-foreground leading-relaxed text-lg">
-            We provide end-to-end market research services tailored to your
-            business needs, from data collection to actionable insights.
+          <p className="text-muted-foreground text-lg">
+            End-to-end market research services designed to deliver clarity,
+            confidence, and measurable impact.
           </p>
         </motion.div>
 
-        {/* Service Cards - Bento Style */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* PREMIUM SERVICE CARDS */}
+        <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -79,22 +78,46 @@ export function ServicesPreview() {
             >
               <Link
                 to={service.link}
-                className="group block p-8 rounded-3xl bg-card border border-border/50 shadow-warm hover:shadow-warm-lg transition-all duration-500 hover:-translate-y-2"
+                className="group relative block rounded-3xl p-8 
+                           bg-card/70 backdrop-blur-xl 
+                           border border-border/50
+                           shadow-warm transition-all duration-500
+                           hover:-translate-y-2 hover:shadow-warm-lg
+                           hover:border-primary/40"
               >
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <service.icon className="w-7 h-7 text-primary-foreground" />
+                {/* Glow on hover */}
+                <div className="absolute inset-0 rounded-3xl opacity-0 
+                                group-hover:opacity-100 transition
+                                bg-gradient-to-br from-primary/10 to-transparent" />
+
+                {/* Icon */}
+                <div
+                  className={`relative z-10 w-16 h-16 rounded-2xl 
+                              bg-gradient-to-br ${service.color}
+                              flex items-center justify-center mb-6
+                              shadow-lg group-hover:scale-110 
+                              transition-transform duration-300`}
+                >
+                  <service.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="font-display text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+
+                {/* Content */}
+                <h3 className="relative z-10 text-xl font-semibold mb-3 
+                               group-hover:text-primary transition-colors">
                   {service.title}
                 </h3>
-                <p className="font-body text-muted-foreground leading-relaxed mb-4">
+
+                <p className="relative z-10 text-muted-foreground leading-relaxed mb-6">
                   {service.description}
                 </p>
-                <div className="flex items-center gap-2 text-primary font-body text-sm font-medium">
+
+                {/* CTA */}
+                <div className="relative z-10 inline-flex items-center gap-2 
+                                text-primary font-medium text-sm">
                   Learn more
                   <ArrowRight
                     size={16}
-                    className="group-hover:translate-x-2 transition-transform duration-300"
+                    className="group-hover:translate-x-2 transition-transform"
                   />
                 </div>
               </Link>
@@ -103,20 +126,26 @@ export function ServicesPreview() {
         </div>
 
         {/* CTA */}
-        <motion.div 
-          className="text-center mt-12"
+        <motion.div
+          className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6 }}
         >
-          <Button size="lg" className="group gradient-primary text-primary-foreground rounded-full px-8 shadow-warm hover:shadow-warm-lg transition-all duration-300" asChild>
+          <Button
+            size="lg"
+            className="group gradient-primary rounded-full px-10 shadow-warm 
+                       hover:shadow-warm-lg transition-all"
+            asChild
+          >
             <Link to="/services" className="flex items-center gap-2">
               View All Services
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
         </motion.div>
+
       </div>
     </section>
   );
