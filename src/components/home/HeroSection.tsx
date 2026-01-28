@@ -157,8 +157,8 @@ export function HeroSection() {
             </Link>
           </Button>
 
-          <Button size="lg" variant="outline" className="rounded-full px-10" asChild>
-            <Link to="/contact">Contact Us</Link>
+          <Button size="lg" className="rounded-full px-10" asChild>
+            <Link to="/contact">Contact Us <ArrowRight className="ml-2" /></Link>
           </Button>
         </div>
 
