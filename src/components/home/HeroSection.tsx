@@ -1,32 +1,39 @@
+
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
+import hero1 from "@/assets/global-research.jpg";
+import hero2 from "@/assets/services-qualitative.jpg";
+import hero3 from "@/assets/services-project-management.jpg";
+import hero4 from "@/assets/services-recruitment.jpg";
+import hero5 from "@/assets/services-quantitative.jpg";
+
 
 const items = [
   {
-    src: "src/assets/global-research.jpg",
+    src: hero1,
     title: "Global Research",
     desc: "Multi-country market intelligence solutions",
   },
   {
-    src: "src/assets/services-qualitative.jpg",
+    src: hero2,
     title: "Qualitative Studies",
     desc: "In-depth interviews & focus groups",
   },
   {
-    src: "src/assets/services-project-management.jpg",
+    src: hero3,
     title: "Project Management",
     desc: "End-to-end research execution",
   },
   {
-    src: "src/assets/services-recruitment.jpg",
+    src: hero4,
     title: "Recruitment Services",
     desc: "Targeted respondent sourcing",
   },
   {
-    src: "src/assets/global-research.jpg",
+    src: hero5,
     title: "Global Expansion",
     desc: "Research-backed market entry strategies",
   },
