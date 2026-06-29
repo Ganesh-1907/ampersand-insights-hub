@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Building2,
   BarChart3,
@@ -144,17 +145,23 @@ const Services = () => {
       {/* Services Alternating Rows */}
       <section className="py-12 pb-32">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-12 max-w-6xl mx-auto">
             {services.map((service, index) => {
               const isImageLeft = index % 2 === 0;
               return (
                 <div key={index} className="w-full flex justify-center">
                   <div
-                    className={`flex w-full md:w-5/6 h-56 md:h-64 shadow-lg bg-white overflow-hidden items-stretch ${isImageLeft ? "flex-row rounded-l-full rounded-r-3xl" : "flex-row-reverse rounded-r-full rounded-l-3xl"}`}
+                    className={`flex flex-col w-full shadow-lg bg-white overflow-hidden items-stretch rounded-3xl md:w-5/6 md:h-64 ${
+                      isImageLeft
+                        ? "md:flex-row md:rounded-l-full md:rounded-r-3xl"
+                        : "md:flex-row-reverse md:rounded-r-full md:rounded-l-3xl"
+                    }`}
                   >
                     {/* Image */}
                     <div
-                      className={`w-2/5 h-full flex items-center ${isImageLeft ? "rounded-l-full" : "rounded-r-full"} overflow-hidden`}
+                      className={`w-full h-48 md:w-2/5 md:h-full flex items-center overflow-hidden ${
+                        isImageLeft ? "md:rounded-l-full" : "md:rounded-r-full"
+                      }`}
                     >
                       <img
                         src={service.image}
@@ -163,26 +170,27 @@ const Services = () => {
                       />
                     </div>
                     {/* Text */}
-                    <div
-                      className={`w-3/5 flex flex-col justify-center px-6 py-6 ${isImageLeft ? "rounded-r-3xl" : "rounded-l-3xl"}`}
-                    >
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary transition-transform duration-300 group-hover:scale-110 animate-fade-in">
-                          <service.icon className="w-6 h-6 text-white transition-transform duration-300" />
+                    <div className="w-full md:w-3/5 flex flex-col justify-center px-6 py-8 md:py-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary shrink-0 animate-fade-in">
+                          <service.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                         </span>
-                        <h3 className="font-display text-2xl font-bold text-foreground">
+                        <h3 className="font-display text-xl md:text-2xl font-bold text-foreground">
                           {service.title}
                         </h3>
                       </div>
-                      <p className="font-body text-muted-foreground text-lg mb-4 italic" style={{ fontFamily: 'cursive, sans-serif' }}>
+                      <p
+                        className="font-body text-muted-foreground text-sm sm:text-base mb-4 italic leading-relaxed"
+                        style={{ fontFamily: "cursive, sans-serif" }}
+                      >
                         {service.description}
                       </p>
-                      <a
-                        href={service.link}
-                        className="inline-flex items-center gap-1 mt-2 text-primary font-medium hover:underline transition"
+                      <Link
+                        to={service.link}
+                        className="inline-flex items-center gap-1 text-primary font-medium hover:text-primary/80 transition-colors font-body text-sm font-semibold"
                       >
                         Learn More →
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

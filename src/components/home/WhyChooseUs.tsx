@@ -1,5 +1,7 @@
 import { TrendingUp, Lightbulb, Users, Handshake } from "lucide-react";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 const values = [
   {
@@ -33,14 +35,16 @@ const values = [
 ];
 
 export function WhyChooseUs() {
+  const isMobile = useIsMobile();
+
   return (
-    <section className="py-12 relative overflow-hidden">
+    <section className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 gradient-warm" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-24"
+          className="text-center max-w-3xl mx-auto mb-16 md:mb-24"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -61,7 +65,10 @@ export function WhyChooseUs() {
         </motion.div>
 
         {/* Semi-Circle Cards */}
-        <div className="relative flex justify-center items-end h-[300px] gap-6 flex-wrap md:flex-nowrap">
+        <div className={cn(
+          "relative flex flex-col md:flex-row justify-center items-center md:items-end gap-6 md:gap-4 lg:gap-6",
+          isMobile ? "min-h-fit" : "h-[360px]"
+        )}>
           {values.map((value, index) => (
             <motion.div
               key={index}
@@ -69,13 +76,13 @@ export function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              style={{ rotate: value.rotate }}
+              style={{ rotate: isMobile ? 0 : value.rotate }}
               className="origin-bottom"
             >
-              <div className="group w-[260px] h-[320px] bg-card/80 backdrop-blur-xl 
+              <div className="group w-[260px] min-h-[320px] bg-card/85 backdrop-blur-xl 
                               border border-border shadow-xl 
                               rounded-t-[140px] rounded-b-2xl 
-                              px-6 pt-8 pb-16
+                              px-6 pt-8 pb-10
                               transition-all duration-300 
                               hover:-translate-y-4 hover:scale-105">
                 
@@ -86,11 +93,11 @@ export function WhyChooseUs() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-display font-semibold text-center mb-3">
+                <h3 className="text-xl font-display font-semibold text-center mb-3 text-foreground">
                   {value.title}
                 </h3>
 
-                <p className="text-sm text-muted-foreground text-center leading-relaxed">
+                <p className="text-sm text-muted-foreground text-center leading-relaxed font-body">
                   {value.description}
                 </p>
               </div>

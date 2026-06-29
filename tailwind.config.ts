@@ -59,6 +59,18 @@ export default {
           800: "hsl(var(--warm-800))",
           900: "hsl(var(--warm-900))",
         },
+        olive: {
+          50: "hsl(var(--olive-50))",
+          100: "hsl(var(--olive-100))",
+          200: "hsl(var(--olive-200))",
+          300: "hsl(var(--olive-300))",
+          400: "hsl(var(--olive-400))",
+          500: "hsl(var(--olive-500))",
+          600: "hsl(var(--olive-600))",
+          700: "hsl(var(--olive-700))",
+          800: "hsl(var(--olive-800))",
+          900: "hsl(var(--olive-900))",
+        },
         terracotta: {
           50: "hsl(var(--terracotta-50))",
           100: "hsl(var(--terracotta-100))",

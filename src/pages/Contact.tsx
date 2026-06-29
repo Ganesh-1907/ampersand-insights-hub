@@ -124,7 +124,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-background rounded-2xl p-8 card-elevated">
+              <div className="bg-background rounded-2xl p-6 sm:p-8 card-elevated">
                 <h2 className="font-display text-2xl font-bold text-foreground mb-6">
                   Send Us a Message
                 </h2>

@@ -72,10 +72,10 @@ const About = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-warm-900/20 to-transparent" />
               </div>
-              {/* Floating Stats Card */}
-              <div className="absolute -bottom-6 -right-6 glass p-6 rounded-2xl shadow-warm-lg hidden md:block">
-                <div className="text-4xl font-display font-bold gradient-text">10+</div>
-                <div className="text-sm font-body text-muted-foreground">Years Experience</div>
+               {/* Floating Stats Card */}
+              <div className="absolute bottom-4 right-4 md:-bottom-6 md:-right-6 glass p-4 md:p-6 rounded-2xl shadow-warm-lg">
+                <div className="text-2xl md:text-4xl font-display font-bold gradient-text">10+</div>
+                <div className="text-xs md:text-sm font-body text-muted-foreground">Years Experience</div>
               </div>
               {/* Decorative Ring */}
               <div className="absolute -top-4 -left-4 w-24 h-24 border-2 border-primary/20 rounded-full" />
@@ -160,7 +160,7 @@ const About = () => {
           className="group"
         >
           <div
-            className="relative w-[300px] h-[360px]
+            className="relative w-full max-w-[300px] h-[360px]
                        bg-card/95 backdrop-blur-2xl
                        border border-border/60
                        shadow-[0_20px_40px_-10px_rgba(0,0,0,0.35)]

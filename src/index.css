@@ -32,6 +32,18 @@
     --terracotta-800: 4 70% 22%;
     --terracotta-900: 2 72% 15%;
 
+    /* Olive Accent Palette */
+    --olive-50: 60 25% 97%;
+    --olive-100: 60 20% 93%;
+    --olive-200: 61 15% 85%;
+    --olive-300: 62 12% 75%;
+    --olive-400: 63 12% 62%;
+    --olive-500: 65 22% 38%;
+    --olive-600: 66 25% 32%;
+    --olive-700: 68 28% 25%;
+    --olive-800: 70 30% 18%;
+    --olive-900: 72 35% 12%;
+
     /* Neutral Palette */
     --neutral-50: 40 20% 98%;
     --neutral-100: 38 15% 95%;

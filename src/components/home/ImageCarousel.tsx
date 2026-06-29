@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 import globalResearch from "@/assets/global-research.jpg";
 import servicesQuantitative from "@/assets/services-quantitative.jpg";
@@ -37,6 +38,7 @@ const slides = [
 
 export function ImageCarousel() {
   const [active, setActive] = useState(0);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -56,50 +58,63 @@ export function ImageCarousel() {
   };
 
   const variants = {
-    center: { x: 0, scale: 1.25, opacity: 1, zIndex: 5 },
-    right1: { x: 280, scale: 0.9, opacity: 0.6, zIndex: 3 },
-    right2: { x: 520, scale: 0.75, opacity: 0.3, zIndex: 1 },
-    left1: { x: -280, scale: 0.9, opacity: 0.6, zIndex: 3 },
-    left2: { x: -520, scale: 0.75, opacity: 0.3, zIndex: 1 },
+    center: { x: 0, scale: isMobile ? 1.1 : 1.25, opacity: 1, zIndex: 5 },
+    right1: { x: isMobile ? 120 : 280, scale: 0.9, opacity: 0.6, zIndex: 3 },
+    right2: { x: isMobile ? 220 : 520, scale: 0.75, opacity: 0.3, zIndex: 1 },
+    left1: { x: isMobile ? -120 : -280, scale: 0.9, opacity: 0.6, zIndex: 3 },
+    left2: { x: isMobile ? -220 : -520, scale: 0.75, opacity: 0.3, zIndex: 1 },
     hidden: { opacity: 0, scale: 0.5 },
   };
 
   return (
-    <section className="py-20 gradient-warm overflow-hidden">
+    <section className="py-16 md:py-24 gradient-warm overflow-hidden">
       <div className="container mx-auto px-4">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <span className="inline-flex items-center px-5 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
             Our Work
           </span>
 
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-foreground">
             Research in <span className="gradient-text">Action</span>
           </h2>
 
-          <p className="text-olive-200 text-lg">
+          <p className="text-muted-foreground text-lg">
             Our expertise spans global markets, qualitative depth, and
             data-driven precision.
           </p>
         </div>
 
         {/* HERO STYLE CAROUSEL */}
-        <div className="relative h-[420px] flex items-center justify-center">
+        <div className="relative h-[280px] sm:h-[340px] md:h-[420px] flex items-center justify-center">
           {slides.map((slide, index) => (
             <motion.div
               key={index}
-              className="absolute"
+              className="absolute cursor-grab active:cursor-grabbing touch-pan-y"
               variants={variants}
               animate={getPosition(index)}
-              transition={{ duration: 1, ease: "easeInOut" }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragEnd={(event, info) => {
+                const swipeThreshold = 50;
+                if (info.offset.x < -swipeThreshold) {
+                  // Swiped left
+                  setActive((prev) => (prev + 1) % slides.length);
+                } else if (info.offset.x > swipeThreshold) {
+                  // Swiped right
+                  setActive((prev) => (prev - 1 + slides.length) % slides.length);
+                }
+              }}
             >
-              <div className="relative w-[450px] h-[300px] rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative w-[280px] h-[190px] sm:w-[350px] sm:h-[240px] md:w-[450px] md:h-[300px] rounded-3xl overflow-hidden shadow-2xl">
 
                 <img
                   src={slide.image}
                   alt={slide.title}
                   className="w-full h-full object-cover"
+                  draggable="false"
                 />
 
                 {/* TEXT ONLY FOR ACTIVE */}
@@ -110,11 +125,11 @@ export function ImageCarousel() {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <div className="w-full p-6 bg-gradient-to-t from-black/70 to-transparent">
-                      <h3 className="text-2xl font-bold text-white">
+                    <div className="w-full p-4 md:p-6 bg-gradient-to-t from-black/80 to-transparent">
+                      <h3 className="text-lg md:text-2xl font-bold text-white font-display">
                         {slide.title}
                       </h3>
-                      <p className="text-sm text-white mt-1">
+                      <p className="text-xs md:text-sm text-white mt-1 font-body">
                         {slide.description}
                       </p>
                     </div>
