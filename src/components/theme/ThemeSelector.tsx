@@ -56,7 +56,7 @@ export function ThemeSelector() {
 
   const colorsList: { id: ColorTheme; name: string; hex: string; bgClass: string }[] = [
     { id: "blue", name: "Blue", hex: "#2563EB", bgClass: "bg-[#2563EB]" },
-    { id: "purple", name: "Purple", hex: "#8B5CF6", bgClass: "bg-[#8B5CF6]" },
+    { id: "purple", name: "Purple", hex: "#DE88CC", bgClass: "bg-[#DE88CC]" },
     { id: "emerald", name: "Emerald", hex: "#2E8B57", bgClass: "bg-[#2E8B57]" },
     { id: "green-gold", name: "Green", hex: "#B89B3C", bgClass: "bg-[#B89B3C]" },
     { id: "charcoal-orange", name: "Orange", hex: "#FF7A00", bgClass: "bg-[#FF7A00]" },
