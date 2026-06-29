@@ -15,10 +15,10 @@ const solutions = [
   },
   {
     title: "Expertise in B2B Survey",
-    description: "Through extensive experience we have built a worldwide database of high net worth individuals and business professionals in various industries, such as IT-Management, Financial Services, just to name a few. Our B2B panels consist of validated and qualified decision makers at various levels and positions.",
+    description: "Through extensive experience we have built a worldwide database of high net worth individuals and business professionals in various industries, such as IT-Management, Financial Services, just to name a few. Our B2B panels consist of validated and qualified decision makers at various levels and positions. They are recruited from numerous past studies and credible sample sources and all have been verified by phone. This guarantees a high-quality in sampling of B2B target groups.",
   },
   {
-    title: "Test Your New Concepts",
+    title: "Concept Tests",
     description: "Test your new concepts and consolidate them. Identify the underlying reasons for adherence. Identify concrete areas for optimization. Helping to put it into action.",
   },
   {
@@ -38,11 +38,11 @@ const solutions = [
     description: "An approach by the relative importance of each product attribute in the purchase decision to understand how the demand for the product varies according to the evolution of the price.",
   },
   {
-    title: "NPS (Net Promoter Score)",
+    title: "NPS",
     description: "The Net Promoter Score is an indicator of how likely customers are to recommend the company, its products or services to other consumers. It measures customer loyalty and engagement with the brand.",
   },
   {
-    title: "CSAT (Customer Satisfaction Score)",
+    title: "CSAT",
     description: "The Customer Satisfaction Score is an indicator that measures overall customer satisfaction using a rating scale. The average score provided is an aggregate measure that allows comparison over time between different products or services.",
   },
 ];

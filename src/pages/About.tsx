@@ -142,9 +142,8 @@ const About = () => {
         <span className="gradient-text">to Our Clients</span>
       </h2>
 
-      <p className="text-muted-foreground text-lg leading-relaxed">
-        Working with Ampersand Profiles helps you make impactful decisions
-        faster and stay ahead of what’s next.
+      <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+        Ampro provides you with hypercritical information at speed. We apply our vast experience to clients, so you can move forward with confidence. Our spirit of innovation and focus on technology fused with expertise makes us different. Here’s what we promise to all of our clients:
       </p>
     </motion.div>
 

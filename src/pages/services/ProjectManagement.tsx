@@ -18,12 +18,12 @@ const features = [
   {
     icon: Shield,
     title: "Quality Assurance",
-    description: "The project manager proactively works with our in-house recruiters and external partners to ensure that your project is delivered to the highest possible standard.",
+    description: "The project manager proactively works with our in-house recruiters and external partners to ensure that your project is delivered to the highest possible standard while providing you with regular progress updates.",
   },
   {
     icon: HeartHandshake,
     title: "Trust & Transparency",
-    description: "We believe in transparency and building relationships with our clients that are based on trust. If we encounter a problem, we will let you know right away and take immediate action.",
+    description: "We believe in transparency and building relationships with our clients that are based on trust. If we do encounter a problem, we will let you know right away and take immediate action to solve it.",
   },
 ];
 
@@ -55,7 +55,7 @@ const ProjectManagement = () => {
               <span className="text-primary">Management</span>
             </h1>
             <p className="font-body text-lg text-muted-foreground leading-relaxed">
-              Our approach to project management is built on effective communication, transparency, and a commitment to delivering the highest quality results.
+              We believe in an organised approach to project management and believe that the secret of success is effective communication.
             </p>
           </div>
         </div>
@@ -77,7 +77,7 @@ const ProjectManagement = () => {
                 Excellence in Every Project
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed">
-                Ampersand Profiles makes it a priority to work with the best partners. We hand select the best of the best in order to ensure that we deliver consistency across all markets, and we regularly review the performance of our partners.
+                Ampersand Profiles makes it a priority to get all of our partners. We hand select the best of the best in order to ensure that we deliver consistency across all markets, and we regularly review the performance of our partners.
               </p>
               <p className="font-body text-muted-foreground leading-relaxed">
                 At the end of each project we also encourage our clients to provide feedback on what went well and any areas for improvement. We take this feedback seriously and are constantly seeking to refine our processes and learn from each other.

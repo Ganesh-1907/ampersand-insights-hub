@@ -8,12 +8,12 @@ const process = [
   {
     step: "1",
     title: "Brief Review",
-    description: "We review your brief and make sure that we understand it fully, then consult on the best screener questions to ensure that all necessary information is captured.",
+    description: "We review your brief and make sure that we understand it fully. If appropriate, we will consult with you on the screener questions.",
   },
   {
     step: "2",
     title: "Initial Matching",
-    description: "We begin by making an initial match using our in-house database or online data sources to gather a pool of potential respondents.",
+    description: "We begin by making an initial match using our database or online data sources to gather a pool of potential respondents.",
   },
   {
     step: "3",

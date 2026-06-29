@@ -70,10 +70,10 @@ const QualitativeSolutions = () => {
               Qualitative <span className="text-primary">Solutions</span>
             </h1>
             <p className="font-body text-lg text-muted-foreground leading-relaxed">
-              Ampersand Profiles's core services are respondent recruitment and
-              professional project management for qualitative and quantitative
-              fieldwork. In addition, we provide a wide range of support
-              services for your market research project.
+              Ampersand Profiles’s core services are respondent recruitment and professional project management for qualitative and quantitative fieldwork.
+            </p>
+            <p className="font-body text-lg text-muted-foreground leading-relaxed mt-4">
+              In addition, we can provide a wide range of support services for your market research project with experience in a variety of industries.
             </p>
           </div>
         </div>

@@ -8,28 +8,28 @@ const values = [
     icon: TrendingUp,
     title: "Impactful",
     description:
-      "The information we provide is impactful and will have a positive impact on the baseline for your business.",
+      "The information that Ampro provides is impactful, and will have a positive impact on the base line for your business.",
     rotate: -18,
   },
   {
     icon: Lightbulb,
     title: "Innovative",
     description:
-      "Our work is innovative and based on the latest advances in technology. We are acrobatic and creative.",
+      "The work we deliver is innovative and based on the latest advances in technology, we are acrobatic and creative.",
     rotate: -6,
   },
   {
     icon: Users,
     title: "Expert",
     description:
-      "Our team encompasses experts who apply their knowledge to provide you with clear direction and insightful information.",
+      "Our team is encompassing of experts who apply their knowledge to provide you with clear direction, and insightful information.",
     rotate: 6,
   },
   {
     icon: Handshake,
     title: "Engaged & Advisory",
     description:
-      "We are proactive. When working with us, the spirit of partnership and shared responsibility is inherent.",
+      "Finally, we are engaged and advisory. We are proactive, and when working with us, the spirit of partnership and shared responsibility is inherent.",
     rotate: 18,
   },
 ];
@@ -58,9 +58,8 @@ export function WhyChooseUs() {
             Why Choose <span className="gradient-text">Ampersand Profiles?</span>
           </h2>
 
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Working with Ampersand Profiles helps you make impactful decisions
-            faster and stay ahead of what’s next.
+          <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+            Working with Ampersand Profiles will help you make impactful decisions faster and keep you ahead of what’s next.
           </p>
         </motion.div>
 
