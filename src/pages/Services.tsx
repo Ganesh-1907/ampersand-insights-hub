@@ -110,7 +110,7 @@ const Services = () => {
         {/* Background Pattern */}
         <div className="absolute inset-0 pattern-dots opacity-50" />
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-terracotta-200/20 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-primary/10 to-transparent rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -151,7 +151,7 @@ const Services = () => {
               return (
                 <div key={index} className="w-full flex justify-center">
                   <div
-                    className={`flex flex-col w-full shadow-lg bg-white overflow-hidden items-stretch rounded-3xl md:w-5/6 md:h-64 ${
+                    className={`flex flex-col w-full shadow-lg bg-card/75 border border-border/50 backdrop-blur-md overflow-hidden items-stretch rounded-3xl md:w-5/6 md:h-64 ${
                       isImageLeft
                         ? "md:flex-row md:rounded-l-full md:rounded-r-3xl"
                         : "md:flex-row-reverse md:rounded-r-full md:rounded-l-3xl"

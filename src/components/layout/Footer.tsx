@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 export function Footer() {
   return (
-    <footer className="relative bg-warm-900 text-warm-100 overflow-hidden">
+    <footer className="relative bg-warm-50 dark:bg-warm-50/30 text-warm-700 border-t border-warm-200/60 dark:border-warm-800/40 overflow-hidden transition-colors duration-500">
       {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-terracotta-600/10 to-transparent rounded-full blur-3xl" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-warm-600/10 to-transparent rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 py-16 relative z-10">
@@ -20,14 +20,14 @@ export function Footer() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-2">
-              <span className="font-display text-2xl font-bold text-primary-foreground">
+              <span className="font-display text-2xl font-bold text-primary">
                 AMPERSAND
               </span>
-              <span className="font-display text-2xl font-light text-warm-400">
+              <span className="font-display text-2xl font-light text-warm-500 dark:text-warm-400">
                 PROFILES
               </span>
             </div>
-            <p className="text-warm-300 font-body text-sm leading-relaxed">
+            <p className="text-warm-600 dark:text-warm-300 font-body text-sm leading-relaxed">
               A global market research firm specializing in data acquisition,
               providing splendid data for both quantitative and qualitative
               market research studies.
@@ -36,14 +36,14 @@ export function Footer() {
             <div className="flex items-center gap-3">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-warm-800 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 rounded-full bg-warm-200/60 dark:bg-warm-800 text-warm-700 dark:text-warm-200 hover:bg-primary hover:text-white dark:hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="LinkedIn"
               >
                 <Linkedin size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-warm-800 hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
+                className="w-10 h-10 rounded-full bg-warm-200/60 dark:bg-warm-800 text-warm-700 dark:text-warm-200 hover:bg-primary hover:text-white dark:hover:bg-primary flex items-center justify-center transition-all duration-300 hover:scale-110"
                 aria-label="Twitter"
               >
                 <Twitter size={18} />
@@ -59,7 +59,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="font-display text-lg font-semibold text-primary-foreground">
+            <h4 className="font-display text-lg font-semibold text-warm-900 dark:text-warm-100">
               Quick Links
             </h4>
             <nav className="flex flex-col gap-3">
@@ -72,7 +72,7 @@ export function Footer() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="group flex items-center gap-2 text-warm-300 hover:text-primary-foreground transition-colors font-body text-sm"
+                  className="group flex items-center gap-2 text-warm-600 dark:text-warm-300 hover:text-primary transition-colors font-body text-sm"
                 >
                   <span>{link.name}</span>
                   <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -89,7 +89,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="font-display text-lg font-semibold text-primary-foreground">
+            <h4 className="font-display text-lg font-semibold text-warm-900 dark:text-warm-100">
               Services
             </h4>
             <nav className="flex flex-col gap-3">
@@ -102,7 +102,7 @@ export function Footer() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="group flex items-center gap-2 text-warm-300 hover:text-primary-foreground transition-colors font-body text-sm"
+                  className="group flex items-center gap-2 text-warm-600 dark:text-warm-300 hover:text-primary transition-colors font-body text-sm"
                 >
                   <span>{link.name}</span>
                   <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -119,30 +119,30 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h4 className="font-display text-lg font-semibold text-primary-foreground">
+            <h4 className="font-display text-lg font-semibold text-warm-900 dark:text-warm-100">
               Contact Us
             </h4>
             <div className="space-y-4">
               <a
                 href="mailto:info@ampersandprofiles.com"
-                className="flex items-center gap-3 text-warm-300 hover:text-primary-foreground transition-colors font-body text-sm group"
+                className="flex items-center gap-3 text-warm-600 dark:text-warm-300 hover:text-primary transition-colors font-body text-sm group"
               >
-                <div className="w-10 h-10 rounded-full bg-warm-800 group-hover:bg-primary flex items-center justify-center transition-colors">
+                <div className="w-10 h-10 rounded-full bg-warm-200/60 dark:bg-warm-800 text-warm-700 dark:text-warm-300 group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-colors">
                   <Mail size={16} />
                 </div>
                 info@ampersandprofiles.com
               </a>
               <a
                 href="tel:+1234567890"
-                className="flex items-center gap-3 text-warm-300 hover:text-primary-foreground transition-colors font-body text-sm group"
+                className="flex items-center gap-3 text-warm-600 dark:text-warm-300 hover:text-primary transition-colors font-body text-sm group"
               >
-                <div className="w-10 h-10 rounded-full bg-warm-800 group-hover:bg-primary flex items-center justify-center transition-colors">
+                <div className="w-10 h-10 rounded-full bg-warm-200/60 dark:bg-warm-800 text-warm-700 dark:text-warm-300 group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-colors">
                   <Phone size={16} />
                 </div>
                 +1 (234) 567-890
               </a>
-              <div className="flex items-start gap-3 text-warm-300 font-body text-sm">
-                <div className="w-10 h-10 rounded-full bg-warm-800 flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-3 text-warm-600 dark:text-warm-300 font-body text-sm">
+                <div className="w-10 h-10 rounded-full bg-warm-200/60 dark:bg-warm-800 text-warm-700 dark:text-warm-300 flex items-center justify-center flex-shrink-0">
                   <MapPin size={16} />
                 </div>
                 <span className="pt-2">Kanakapura Road, Bangalore</span>
@@ -152,12 +152,12 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-warm-800 mt-12 pt-8">
+        <div className="border-t border-warm-200 dark:border-warm-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-primary-foreground  font-body text-sm">
+            <p className="text-warm-500 dark:text-warm-400 font-body text-sm">
               © {new Date().getFullYear()} Ampersand Profiles. All rights reserved.
             </p>
-            <p className="text-primary-foreground  font-body text-sm">
+            <p className="text-warm-500 dark:text-warm-400 font-body text-sm">
               Developed by Build Your Vision
             </p>
           </div>

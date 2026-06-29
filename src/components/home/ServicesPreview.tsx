@@ -10,7 +10,6 @@ const services = [
     description:
       "Market segmentation, competitor analysis, NPS, CSAT, and comprehensive data-driven research.",
     link: "/services/quantitative",
-    color: "from-terracotta-500 to-terracotta-600",
   },
   {
     icon: Users,
@@ -18,7 +17,6 @@ const services = [
     description:
       "Focus groups, in-depth interviews, and expert moderation for rich consumer insights.",
     link: "/services/qualitative",
-    color: "from-warm-500 to-warm-600",
   },
   {
     icon: FileText,
@@ -26,7 +24,6 @@ const services = [
     description:
       "Single point of contact with proactive communication throughout your research journey.",
     link: "/services/project-management",
-    color: "from-terracotta-600 to-warm-600",
   },
   {
     icon: Video,
@@ -34,7 +31,6 @@ const services = [
     description:
       "Comprehensive analysis with actionable insights delivered in clear, professional reports.",
     link: "/services/analysis",
-    color: "from-warm-600 to-terracotta-500",
   },
 ];
 
@@ -92,11 +88,11 @@ export function ServicesPreview() {
 
                 {/* Icon */}
                 <div
-                  className={`relative z-10 w-16 h-16 rounded-2xl 
-                              bg-gradient-to-br ${service.color}
+                  className="relative z-10 w-16 h-16 rounded-2xl 
+                              bg-gradient-to-br from-primary to-primary/80
                               flex items-center justify-center mb-6
                               shadow-lg group-hover:scale-110 
-                              transition-transform duration-300`}
+                              transition-transform duration-300"
                 >
                   <service.icon className="w-7 h-7 text-white" />
                 </div>

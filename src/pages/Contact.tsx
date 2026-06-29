@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-5 bg-olive-50">
+      <section className="pt-32 pb-5 bg-warm-100/50 dark:bg-zinc-950/40">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -73,8 +73,8 @@ const Contact = () => {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-olive-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-5 h-5 text-olive-600" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-body font-semibold text-foreground mb-1">
@@ -90,8 +90,8 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-olive-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-5 h-5 text-olive-600" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-body font-semibold text-foreground mb-1">
@@ -107,8 +107,8 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-olive-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-5 h-5 text-olive-600" />
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-body font-semibold text-foreground mb-1">
@@ -124,7 +124,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-background rounded-2xl p-6 sm:p-8 card-elevated">
+              <div className="bg-card rounded-2xl p-6 sm:p-8 border border-border/40 shadow-xl">
                 <h2 className="font-display text-2xl font-bold text-foreground mb-6">
                   Send Us a Message
                 </h2>
@@ -140,7 +140,7 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="John Doe"
                         required
-                        className="bg-olive-50 border-olive-200 focus:border-primary"
+                        className="bg-card dark:bg-zinc-900/50 border-border focus:border-primary text-foreground placeholder:text-muted-foreground"
                       />
                     </div>
                     <div className="space-y-2">
@@ -154,7 +154,7 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="john@company.com"
                         required
-                        className="bg-olive-50 border-olive-200 focus:border-primary"
+                        className="bg-card dark:bg-zinc-900/50 border-border focus:border-primary text-foreground placeholder:text-muted-foreground"
                       />
                     </div>
                   </div>
@@ -169,7 +169,7 @@ const Contact = () => {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Your Company"
-                        className="bg-olive-50 border-olive-200 focus:border-primary"
+                        className="bg-card dark:bg-zinc-900/50 border-border focus:border-primary text-foreground placeholder:text-muted-foreground"
                       />
                     </div>
                     <div className="space-y-2">
@@ -182,7 +182,7 @@ const Contact = () => {
                         onChange={handleChange}
                         placeholder="How can we help?"
                         required
-                        className="bg-olive-50 border-olive-200 focus:border-primary"
+                        className="bg-card dark:bg-zinc-900/50 border-border focus:border-primary text-foreground placeholder:text-muted-foreground"
                       />
                     </div>
                   </div>
@@ -198,7 +198,7 @@ const Contact = () => {
                       placeholder="Tell us about your project..."
                       rows={6}
                       required
-                      className="bg-olive-50 border-olive-200 focus:border-primary resize-none"
+                      className="bg-card dark:bg-zinc-900/50 border-border focus:border-primary text-foreground placeholder:text-muted-foreground resize-none"
                     />
                   </div>
 

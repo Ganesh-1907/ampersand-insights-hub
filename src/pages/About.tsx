@@ -34,7 +34,7 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-32 pb-12 bg-olive-50">
+      <section className="pt-32 pb-12 bg-warm-100/50 dark:bg-zinc-950/40">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
            
@@ -234,7 +234,7 @@ const About = () => {
             "Consistent methodology across markets",
           ].map((item, index) => (
             <li key={index} className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-olive-500 flex-shrink-0 mt-0.5" />
+              <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
               <span className="font-body text-foreground">{item}</span>
             </li>
           ))}
