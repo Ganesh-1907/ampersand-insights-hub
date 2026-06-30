@@ -132,19 +132,19 @@ export function Footer() {
                 info@ampersandprofiles.com
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:+919845165139"
                 className="flex items-center gap-3 text-warm-600 dark:text-warm-300 hover:text-primary transition-colors font-body text-sm group"
               >
                 <div className="w-10 h-10 rounded-full bg-warm-200/60 dark:bg-warm-800 text-warm-700 dark:text-warm-300 group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-colors">
                   <Phone size={16} />
                 </div>
-                +1 (234) 567-890
+                +91 98451 65139
               </a>
               <div className="flex items-start gap-3 text-warm-600 dark:text-warm-300 font-body text-sm">
                 <div className="w-10 h-10 rounded-full bg-warm-200/60 dark:bg-warm-800 text-warm-700 dark:text-warm-300 flex items-center justify-center flex-shrink-0">
                   <MapPin size={16} />
                 </div>
-                <span className="pt-2">Kanakapura Road, Bangalore</span>
+                <span className="pt-2">447, 11th Main, Padmanabha Nagar, Bangalore 560070</span>
               </div>
             </div>
           </motion.div>

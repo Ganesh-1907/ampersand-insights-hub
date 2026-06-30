@@ -98,10 +98,10 @@ const Contact = () => {
                       Call Us
                     </h3>
                     <a
-                      href="tel:+1234567890"
+                      href="tel:+919845165139"
                       className="font-body text-muted-foreground hover:text-primary transition-colors"
                     >
-                      +1 (234) 567-890
+                      +91 98451 65139
                     </a>
                   </div>
                 </div>
@@ -115,7 +115,7 @@ const Contact = () => {
                       Visit Us
                     </h3>
                     <p className="font-body text-muted-foreground">
-                      Kanakapura Road, Banglore
+                      447, 11th Main, Padmanabha Nagar, Bangalore 560070
                     </p>
                   </div>
                 </div>
