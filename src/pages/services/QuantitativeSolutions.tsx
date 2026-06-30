@@ -83,24 +83,16 @@ const QuantitativeSolutions = () => {
                 className="rounded-2xl shadow-xl w-full max-h-96 object-cover"
               />
             </div>
-            <div className="space-y-4">
+            <div className="space-y-6">
               <h2 className="font-display text-3xl font-bold text-foreground">
-                Data-Driven Quantitative Research
+                CATI: Computer Assisted Telephone Interviewing
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed">
-                Ampersand Profiles delivers data-driven quantitative research solutions designed to provide measurable, reliable insights that support confident business decision-making. Our methodologies combine statistical rigor with practical interpretation, ensuring that data translates into clear strategic direction.
+                Computer Assisted Telephone Interviewing or CATI is a voice call interview method in which trained interviewers call respondents’ phone numbers, usually working from a central call center. CATI interviews are unique in that they are interviewer-administered, so interviewers can conduct probing and clarification of survey questions, and CATI software also allows interviewers to securely record responses and save data. CATI interviews support both qualitative and quantitative survey questions and can utilize audio aids as part of a questionnaire design.
               </p>
               <p className="font-body text-muted-foreground leading-relaxed">
-                Our quantitative solutions help organizations:
+                We use cutting-edge phone survey software that ensures faster data collection and a wider reach, all the while boosting engagement, increasing our interviewer’s efficiency, and increasing response rates.
               </p>
-              <ul className="list-disc pl-6 font-body text-muted-foreground space-y-2">
-                <li>Measure market potential and customer demand</li>
-                <li>Track brand performance and campaign effectiveness</li>
-                <li>Evaluate pricing sensitivity and purchase drivers</li>
-                <li>Benchmark performance against competitors</li>
-                <li>Identify opportunities for growth and optimization</li>
-              </ul>
-             
             </div>
           </div>
         </div>

@@ -20,12 +20,11 @@ export function Footer() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-2">
-              <span className="font-display text-2xl font-bold text-primary">
-                AMPERSAND
-              </span>
-              <span className="font-display text-2xl font-light text-warm-500 dark:text-warm-400">
-                PROFILES
-              </span>
+              <img
+                src="/ap_new_logo.png"
+                alt="Ampersand Profiles"
+                className="h-16 w-auto object-contain rounded"
+              />
             </div>
             <p className="text-warm-600 dark:text-warm-300 font-body text-sm leading-relaxed">
               A global market research firm specializing in data acquisition,

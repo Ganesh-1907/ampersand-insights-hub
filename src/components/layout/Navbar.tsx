@@ -43,22 +43,11 @@ export function Navbar() {
           <nav className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 group">
-              <span
-                className={cn(
-                  "font-display text-2xl font-bold tracking-tight transition-colors duration-300",
-                  isHomePage && !isScrolled ? "text-white" : "text-primary"
-                )}
-              >
-                AMPERSAND
-              </span>
-              <span
-                className={cn(
-                  "font-display text-2xl font-light tracking-tight transition-colors duration-300",
-                  isHomePage && !isScrolled ? "text-warm-200" : "text-warm-500 dark:text-warm-300"
-                )}
-              >
-                PROFILES
-              </span>
+              <img
+                src="/ap_new_logo.png"
+                alt="Ampersand Profiles"
+                className="h-16 w-auto object-contain rounded"
+              />
             </Link>
 
             {/* Desktop Navigation */}
