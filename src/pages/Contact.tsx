@@ -19,10 +19,22 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const text = `Hello! I would like to get in touch.
+
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+${formData.company ? `*Company:* ${formData.company}\n` : ""}*Subject:* ${formData.subject}
+*Message:* ${formData.message}`;
+
+    const whatsappUrl = `https://wa.me/919845165139?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, "_blank");
+
     toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
+      title: "Redirecting to WhatsApp...",
+      description: "Opening WhatsApp to send your message details.",
     });
+    
     setFormData({ name: "", email: "", company: "", subject: "", message: "" });
   };
 
@@ -81,10 +93,10 @@ const Contact = () => {
                       Email Us
                     </h3>
                     <a
-                      href="mailto:info@ampersandprofiles.com"
+                      href="mailto:Info@ampro.co.in"
                       className="font-body text-muted-foreground hover:text-primary transition-colors"
                     >
-                      info@ampersandprofiles.com
+                      Info@ampro.co.in
                     </a>
                   </div>
                 </div>

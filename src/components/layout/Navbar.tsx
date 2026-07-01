@@ -132,10 +132,10 @@ export function Navbar() {
                 <div className="text-[10px] font-body">
                   <p className="text-foreground font-semibold mb-0.5">GET IN TOUCH</p>
                   <a
-                    href="mailto:info@ampersandprofiles.com"
+                    href="mailto:Info@ampro.co.in"
                     className="hover:text-primary transition-colors text-[10px] block font-body"
                   >
-                    info@ampersandprofiles.com
+                    Info@ampro.co.in
                   </a>
                 </div>
               </div>

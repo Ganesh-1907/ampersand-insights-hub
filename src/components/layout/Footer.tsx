@@ -123,13 +123,13 @@ export function Footer() {
             </h4>
             <div className="space-y-4">
               <a
-                href="mailto:info@ampersandprofiles.com"
+                href="mailto:Info@ampro.co.in"
                 className="flex items-center gap-3 text-warm-600 dark:text-warm-300 hover:text-primary transition-colors font-body text-sm group"
               >
                 <div className="w-10 h-10 rounded-full bg-warm-200/60 dark:bg-warm-800 text-warm-700 dark:text-warm-300 group-hover:bg-primary group-hover:text-white flex items-center justify-center transition-colors">
                   <Mail size={16} />
                 </div>
-                info@ampersandprofiles.com
+                Info@ampro.co.in
               </a>
               <a
                 href="tel:+919845165139"
