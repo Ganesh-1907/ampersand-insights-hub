@@ -14,6 +14,10 @@ const solutions = [
     description: "The strengths and weaknesses of one's own products and services often only emerge in comparison to the competition. Using different methodological approaches, we take a close look at our competitors and our customers and thus determine our own need for action in order to improve our market position.",
   },
   {
+    title: "Computer Assisted Telephone Interviewing (CATI)",
+    description: "Computer Assisted Telephone Interviewing (CATI) is a voice call interview method in which trained interviewers call respondents’ phone numbers, usually working from a central call center. CATI interviews are interviewer-administered, so interviewers can conduct probing and clarification of survey questions, and CATI software also allows interviewers to securely record responses and save data. CATI interviews support both qualitative and quantitative survey questions and can utilize audio aids as part of a questionnaire design. We use cutting-edge phone survey software that ensures faster data collection and a wider reach, boosting engagement, interviewer efficiency, and response rates.",
+  },
+  {
     title: "Expertise in B2B Survey",
     description: "Through extensive experience we have built a worldwide database of high net worth individuals and business professionals in various industries, such as IT-Management, Financial Services, just to name a few. Our B2B panels consist of validated and qualified decision makers at various levels and positions. They are recruited from numerous past studies and credible sample sources and all have been verified by phone. This guarantees a high-quality in sampling of B2B target groups.",
   },
@@ -85,14 +89,21 @@ const QuantitativeSolutions = () => {
             </div>
             <div className="space-y-6">
               <h2 className="font-display text-3xl font-bold text-foreground">
-                CATI: Computer Assisted Telephone Interviewing
+                Data-Driven Quantitative Research
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed">
-                Computer Assisted Telephone Interviewing or CATI is a voice call interview method in which trained interviewers call respondents’ phone numbers, usually working from a central call center. CATI interviews are unique in that they are interviewer-administered, so interviewers can conduct probing and clarification of survey questions, and CATI software also allows interviewers to securely record responses and save data. CATI interviews support both qualitative and quantitative survey questions and can utilize audio aids as part of a questionnaire design.
+                Ampersand Profiles delivers data-driven quantitative research solutions designed to provide measurable, reliable insights that support confident business decision-making. Our methodologies combine statistical rigor with practical interpretation, ensuring that data translates into clear strategic direction.
               </p>
               <p className="font-body text-muted-foreground leading-relaxed">
-                We use cutting-edge phone survey software that ensures faster data collection and a wider reach, all the while boosting engagement, increasing our interviewer’s efficiency, and increasing response rates.
+                Our quantitative solutions help organizations:
               </p>
+              <ul className="list-disc pl-6 font-body text-muted-foreground space-y-2">
+                <li>Ensure faster data collection and wider reach using CATI software</li>
+                <li>Measure market potential and customer demand</li>
+                <li>Track brand performance and campaign effectiveness</li>
+                <li>Benchmark performance against competitors</li>
+                <li>Identify opportunities for growth and optimization</li>
+              </ul>
             </div>
           </div>
         </div>
