@@ -86,18 +86,18 @@ export function HeroSection() {
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="text-center mt-8 max-w-xl px-4"
             >
-              <h3 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-primary font-display mb-3 md:mb-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold text-white font-display mb-3 md:mb-4">
                 {items[active].title}
               </h3>
 
-              <p className="text-[var(--hero-left-text)] mt-2 text-base sm:text-lg md:text-xl xl:text-2xl font-body font-light italic leading-relaxed transition-colors duration-500">
+              <p className="text-white/90 mt-2 text-base sm:text-lg md:text-xl xl:text-2xl font-body font-light italic leading-relaxed transition-colors duration-500">
                 {items[active].desc}
               </p>
 
               <div>
                 <Link
                   to="/services"
-                  className="inline-block mt-4 md:mt-6 text-primary hover:text-primary/80 transition-colors underline underline-offset-4 font-body text-sm lg:text-base xl:text-lg font-semibold"
+                  className="inline-block mt-4 md:mt-6 text-white hover:text-white/80 transition-colors underline underline-offset-4 font-body text-sm lg:text-base xl:text-lg font-semibold"
                 >
                   Read more
                 </Link>
