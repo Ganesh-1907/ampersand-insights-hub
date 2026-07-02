@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle, Target, Lightbulb, Users, Handshake, Sparkles 
 import aboutTeam from "@/assets/about-team.jpg";
 import globalResearch from "@/assets/global-research.jpg";
 import { motion } from "framer-motion";
+import { MottoSection } from "@/components/home/MottoSection";
 
 
 const values = [
@@ -57,6 +58,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Brand Motto Section */}
+      <MottoSection />
 
       {/* Main Content (with highlights and floating card) */}
        <section className="py-8">
