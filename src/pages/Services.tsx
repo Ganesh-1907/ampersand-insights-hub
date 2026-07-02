@@ -32,7 +32,7 @@ const services = [
     icon: Briefcase,
     title: "Expertise",
     description:
-      "Specialized knowledge in real estate, location assessment, feasibility testing, and consumer preferences.",
+      "Specialized knowledge in real estate and infrastructure research, feasibility testing, building products validation, and consumer insights.",
     image: globalResearch,
     link: "/services/expertise",
   },

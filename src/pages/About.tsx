@@ -59,9 +59,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Brand Motto Section */}
-      <MottoSection />
-
       {/* Main Content (with highlights and floating card) */}
        <section className="py-8">
         <div className="container mx-auto px-4">
@@ -126,6 +123,9 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Brand Motto Section */}
+      <MottoSection />
 
       {/* Values Section */}
      <section className="py-16 relative overflow-hidden">

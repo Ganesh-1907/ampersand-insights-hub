@@ -11,8 +11,8 @@ const Index = () => {
   return (
     <Layout>
       <HeroSection />
-      <MottoSection />
       <AboutPreview />
+      <MottoSection />
       <ServicesPreview />
       <WhyChooseUs />
       <ImageCarousel />
