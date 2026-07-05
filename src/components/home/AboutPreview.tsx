@@ -19,20 +19,20 @@ export function AboutPreview() {
       <div className="absolute bottom-20 left-0 w-72 h-72 bg-gradient-to-tr from-terracotta-200/10 to-transparent rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-stretch">
           {/* Image */}
           <motion.div 
-            className="relative"
+            className="relative min-h-[400px] lg:min-h-0"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-warm-lg">
+            <div className="relative rounded-3xl overflow-hidden shadow-warm-lg h-full min-h-[400px] lg:min-h-0">
               <img
                 src={aboutTeam}
                 alt="Ampersand Profiles Team"
-                className="w-full h-auto object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-warm-900/20 to-transparent" />
             </div>

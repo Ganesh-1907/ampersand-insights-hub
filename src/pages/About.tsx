@@ -62,14 +62,14 @@ const About = () => {
       {/* Main Content (with highlights and floating card) */}
        <section className="py-8">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
             {/* Image */}
-            <div className="relative">
-              <div className="relative rounded-3xl max-h-[520px] overflow-hidden shadow-warm-lg">
+            <div className="relative min-h-[400px] lg:min-h-0">
+              <div className="relative rounded-3xl overflow-hidden shadow-warm-lg h-full min-h-[400px] lg:min-h-0">
                 <img
                   src={aboutTeam}
                   alt="Ampersand Profiles Team"
-                  className="w-full h-auto object-cover"
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-warm-900/20 to-transparent" />
               </div>

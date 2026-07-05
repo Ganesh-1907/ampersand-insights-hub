@@ -107,8 +107,8 @@ export default {
         },
       },
       fontFamily: {
-        display: ["Fraunces", "serif"],
-        body: ["DM Sans", "sans-serif"],
+        display: ["Noto Sans", "sans-serif"],
+        body: ["Noto Sans", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

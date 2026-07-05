@@ -12,7 +12,7 @@ interface ThemeProviderState {
 
 const initialState: ThemeProviderState = {
   theme: "light",
-  colorTheme: "emerald",
+  colorTheme: "purple",
   setTheme: () => null,
   setColorTheme: () => null,
 };
@@ -30,9 +30,9 @@ interface ThemeProviderProps {
 export function ThemeProvider({
   children,
   defaultTheme = "light",
-  defaultColorTheme = "emerald",
+  defaultColorTheme = "purple",
   storageKey = "ampersand-ui-theme",
-  colorStorageKey = "ampersand-ui-color-theme",
+  colorStorageKey = "ampersand-ui-color-theme-v2",
   ...props
 }: ThemeProviderProps) {
   const [theme, setThemeState] = useState<Theme>(
